@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jamie">
-<meta name="dcterms.date" content="2023-01-28">
+<meta name="dcterms.date" content="2024-02-06">
 
-<title>Jamie’s Blog - HW3: Data Wrangling and Visualization of Temperatures</title>
+<title>Jamie’s Blog - Movie or TV Show Recommendation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -152,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">HW3: Data Wrangling and Visualization of Temperatures</h1>
+      <h1 class="title">Movie or TV Show Recommendation</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">HOMEWORK</div>
               </div>
@@ -172,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 28, 2023</p>
+        <p class="date">February 6, 2024</p>
       </div>
     </div>
     
@@ -191,24 +191,329 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Hello! This is my HW1.</p>
-<div id="ddc25f52-9289-4392-974f-fc16b06f6d10" class="cell" data-execution_count="219">
+<p>Unleashing the Power of Scrapy: Scraping and Recommending Movies and TV Shows from TMDB</p>
+<div id="ddc25f52-9289-4392-974f-fc16b06f6d10" class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pio.renderers.default<span class="op">=</span><span class="st">"iframe"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9b4608eb-21d0-49c6-8d3a-ab2d874c399e" class="cell" data-tags="[]" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotly <span class="im">import</span> express <span class="im">as</span> px</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="intro" class="level2">
+<h2 class="anchored" data-anchor-id="intro">Intro</h2>
+<p>Welcome to the world of web scraping and data-driven recommendations! In today’s digital era, where information is abundant and readily accessible, leveraging the power of data extraction tools like Scrapy opens up a realm of possibilities. In this tutorial, we’ll embark on a journey to scrape data from TMDB (The Movie Database), a treasure trove of information about movies and TV shows. But we’re not stopping there; we’ll dive deeper into the web of interconnected data, exploring the crew members’ profiles and unraveling the threads of their acting history.</p>
+<p>Using Scrapy, a powerful and versatile web crawling framework in Python, we’ll navigate through TMDB’s vast database with ease. Our mission? To gather detailed insights into specific movie and TV show pages, extract information about the cast and crew, and then traverse the web of actor profiles to unearth their acting repertoire. By analyzing the overlaps in their performances, we’ll construct a recommendation engine that suggests similar movies or TV shows based on shared talent.</p>
+<p>Whether you’re a data enthusiast, a budding web developer, or simply curious about the magic behind personalized recommendations, this tutorial will equip you with the tools and knowledge to embark on your scraping and recommendation journey. So, let’s roll up our sleeves, fire up our code editors, and dive headfirst into the fascinating world of Scrapy and TMDB scraping!</p>
+</section>
+<section id="table-of-contents" class="level2">
+<h2 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
+<section id="web-scraper" class="level3">
+<h3 class="anchored" data-anchor-id="web-scraper">1. Web Scraper</h3>
+<pre><code>1.1 Setup
+    1.1.1 Setting up a Scrapy Project
+    1.1.2 Test Scrapy for TMDB Scraping
+1.2 Implementation</code></pre>
+</section>
+<section id="visualization-and-recommendation" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-and-recommendation">2. Visualization and Recommendation</h3>
+</section>
+</section>
+<section id="web-scraper-1" class="level2">
+<h2 class="anchored" data-anchor-id="web-scraper-1">1. Web Scraper</h2>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">1.1 Setup</h3>
+<section id="setting-up-a-scrapy-project" class="level4">
+<h4 class="anchored" data-anchor-id="setting-up-a-scrapy-project">1.1.1 Setting up a Scrapy Project</h4>
+<p>In this section, we’ll walk through the process of setting up a Scrapy project to scrape data from TMDB (The Movie Database). By following these steps, you’ll be able to create a structured project environment ready for web scraping.</p>
+<section id="step-1-activate-your-conda-environment" class="level5">
+<h5 class="anchored" data-anchor-id="step-1-activate-your-conda-environment">Step 1: Activate Your Conda Environment</h5>
+<p>Open a terminal or command prompt and activate your Conda environment where you want to set up your Scrapy project. Type the following command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate PIC16B-24W</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command activates the specified Conda environment named “PIC16B-24W”. Ensure that you have created and configured this environment beforehand.(You can choose whatever environment you have)</p>
+</section>
+<section id="step-2-create-a-scrapy-project" class="level5">
+<h5 class="anchored" data-anchor-id="step-2-create-a-scrapy-project">Step 2: Create a Scrapy Project</h5>
+<p>Now, we’ll create a Scrapy project named “TMDB_scraper”. In your terminal, type the following command:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scrapy</span> startproject TMDB_scraper</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command initializes a new Scrapy project named “TMDB_scraper”. Scrapy will generate several files and directories within this project. When you create a Scrapy project using the <code>scrapy startproject</code> command with the name “TMDB_scraper”, the generated project directory (<code>TMDB_scraper</code>) typically contains the following files and directories:</p>
+<ol type="1">
+<li><p><strong>scrapy.cfg:</strong> This file is the configuration file for your Scrapy project. It contains settings for Scrapy deployment and other global configurations.</p></li>
+<li><p><strong>TMDB_scraper/ (directory inside TMDB_scraper/):</strong> This is the Python package directory containing your project’s code.</p>
+<ul>
+<li><p><strong>items.py:</strong> This file defines the data structure (items) that your spider will extract during scraping. You define the fields you want to extract from the website here.</p></li>
+<li><p><strong>middlewares.py:</strong> This file contains the middlewares used by Scrapy, such as user-agent rotation, proxy usage, etc.</p></li>
+<li><p><strong>pipelines.py:</strong> This file contains the pipelines used by Scrapy for processing scraped items. Pipelines are used to perform tasks like cleaning, validation, and storing data.</p></li>
+<li><p><strong>settings.py:</strong> This file contains Scrapy project settings, such as user-agent, download delay, etc. You can customize these settings according to your requirements.</p></li>
+<li><p><strong>spiders/ (directory):</strong> This directory contains your spider scripts.</p>
+<ul>
+<li><strong>__init__.py:</strong> This file makes the <code>spiders</code> directory a Python package.</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>These are the essential files and directories that are created when you initialize a Scrapy project. Depending on your specific requirements and configurations, your project might have additional files or directories.</p>
+</section>
+<section id="step-3-navigate-to-your-project-directory" class="level5">
+<h5 class="anchored" data-anchor-id="step-3-navigate-to-your-project-directory">Step 3: Navigate to Your Project Directory</h5>
+<p>Navigate to the newly created project directory “TMDB_scraper” using the <code>cd</code> command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> TMDB_scraper</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command changes your current directory to the “TMDB_scraper” directory, where your Scrapy project files are located. From here, you’ll be able to configure and customize your scraping scripts as needed.</p>
+<p>Congratulations! You’ve successfully set up a Scrapy project named “TMDB_scraper” ready for web scraping.</p>
+</section>
+</section>
+<section id="test-scrapy-for-tmdb-scraping" class="level4">
+<h4 class="anchored" data-anchor-id="test-scrapy-for-tmdb-scraping">1.1.2 Test Scrapy for TMDB Scraping</h4>
+<p>We’ll start by configuring settings in the <code>settings.py</code> file to prevent excessive data downloads and avoid being blocked by the website. Then, we’ll explore using the Scrapy shell for interactive testing and debugging.</p>
+<section id="step-1-modify-settings.py-to-limit-page-count" class="level5">
+<h5 class="anchored" data-anchor-id="step-1-modify-settings.py-to-limit-page-count">Step 1: Modify <code>settings.py</code> to Limit Page Count</h5>
+<p>Open the <code>settings.py</code> file located in your Scrapy project directory (<code>TMDB_scraper</code>) using a text editor. Add the following line to limit the number of pages to be scraped:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>CLOSESPIDER_PAGECOUNT <span class="op">=</span> <span class="dv">20</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This line prevents the scraper from downloading too much data during testing. Remember to remove this line later for full-scale scraping.</p>
+</section>
+<section id="step-2-configure-user-agent-to-mimic-a-web-browser" class="level5">
+<h5 class="anchored" data-anchor-id="step-2-configure-user-agent-to-mimic-a-web-browser">Step 2: Configure User-Agent to Mimic a Web Browser</h5>
+<p>To avoid getting blocked by TMDB, we’ll mimic a web browser’s behavior by modifying the <code>USER_AGENT</code> in the <code>settings.py</code> file. Replace the existing <code>USER_AGENT</code> line with the following:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>USER_AGENT <span class="op">=</span> <span class="st">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This user-agent string resembles a typical web browser’s user-agent, which makes it less likely for TMDB to block our requests.</p>
+<p>Or you can use other methods:</p>
+<p>https://doc.scrapy.org/en/latest/topics/practices.html#avoiding-getting-banned</p>
+<p>https://scrapeops.io/python-scrapy-playbook/scrapy-403-unhandled-forbidden-error/</p>
+<p>https://scrapeops.io/web-scraping-playbook/403-forbidden-error-web-scraping/</p>
+<p>https://scrapingrobot.com/blog/most-common-user-agents/</p>
+</section>
+<section id="step-3-test-scraping-with-scrapy-shell" class="level5">
+<h5 class="anchored" data-anchor-id="step-3-test-scraping-with-scrapy-shell">Step 3: Test Scraping with Scrapy Shell</h5>
+<p>Now, let’s test our scraping capability using Scrapy shell. Open a terminal or command prompt and navigate to your Scrapy project directory (<code>TMDB_scraper</code>). Then, run the following command:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scrapy</span> shell https://www.themoviedb.org/movie/157336-interstellar/cast</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace the URL with the desired TMDB page to scrape. Here I used Interstellar. This command launches the Scrapy shell with the specified user-agent and the provided URL.</p>
+<p>Stay tuned for the next part of this tutorial series where we’ll explore writing spider scripts and extracting data from TMDB using Scrapy.</p>
+</section>
+</section>
+</section>
+<section id="website-navigation" class="level3">
+<h3 class="anchored" data-anchor-id="website-navigation">1.2 Website Navigation</h3>
+<p>Before writing the scraper method, we need to have a basic idea of what the website looks like and what information we need to scrap from the website.</p>
+<p>Start by visiting the website you want to scrape. In our case, it’s TMDB (The Movie Database). Browse through different pages, such as movie pages and the Full Cast &amp; Crew page, to get familiar with the layout and structure.</p>
+<section id="explore-the-website" class="level5">
+<h5 class="anchored" data-anchor-id="explore-the-website">Explore the Website</h5>
+<p>Start by visiting the TMDB website and navigating to the movie page of interest. For our example, let’s consider the movie “Interstellar”. You can find its page at:</p>
+<p><a href="https://www.themoviedb.org/movie/157336-interstellar">Interstellar Movie Page</a></p>
+<p>The url is: https://www.themoviedb.org/movie/157336-interstellar</p>
+<p>This is the url that we want to start with in the <code>__init__</code>, where we define the start url, that can be modified with whatever movie or tv show names after the slash movie.</p>
+</section>
+<section id="identify-relevant-pages" class="level5">
+<h5 class="anchored" data-anchor-id="identify-relevant-pages">Identify Relevant Pages</h5>
+<p>Once on the movie page, explore the different sections and links available. In our case, we’re interested in extracting information about the movie’s cast. We’ll navigate to the Full Cast &amp; Crew page by appending “/cast” to the movie page URL:</p>
+<p><a href="https://www.themoviedb.org/movie/157336-interstellar/cast">Interstellar Cast Page</a></p>
+<p>The url is: https://www.themoviedb.org/movie/157336-interstellar/cast</p>
+<p>Note that there is a ‘cast’ was added at the end of the initial url and that is what we are going to do in the <code>parse</code> method.</p>
+<p>For the other 2 method <code>parse_full_credits</code> and <code>parse_actor_page</code> we need to dig deeper to the page construction. Here I am just going to introduce the overall structer of the TmdbSpider class.</p>
+</section>
+<section id="plan-scraping-strategy" class="level5">
+<h5 class="anchored" data-anchor-id="plan-scraping-strategy">Plan Scraping Strategy</h5>
+<p>Now that we’ve identified the relevant pages, we can plan our scraping strategy. We’ll create a Scrapy spider with the following methods:</p>
+<ul>
+<li><code>parse</code>: Navigates to the Full Cast &amp; Crew page and calls <code>parse_full_credits</code>.</li>
+<li><code>parse_full_credits</code>: Extracts information about the cast members and navigates to each actor’s personal page.</li>
+<li><code>parse_actor_page</code>: Extracts the actor’s acting history from their personal page.</li>
+</ul>
+<p>Understanding the structure of the website you’re scraping is essential for developing an effective scraping method. By exploring different pages, identifying relevant information, and planning your scraping strategy, you’ll be better prepared to write the scraper method and extract the desired data.</p>
+<p>Once we’ve outlined the blueprint of our class, the next step is bringing our plan to life. In web scraping, this primarily involves inspecting and extracting data. Once we understand the data structure, our task is to pinpoint its location within the HTML and then select the most appropriate method for extraction.</p>
+</section>
+<section id="inspect-elements" class="level5">
+<h5 class="anchored" data-anchor-id="inspect-elements">Inspect Elements</h5>
+<p>Most modern web browsers offer developer tools that allow you to inspect the HTML and CSS of web pages. Right-click on any element of interest (e.g., movie title, actor name) and select “Inspect” or “Inspect Element” from the context menu.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/1e4aea55-9011-4bb3-b41b-d6c3fa35fbc4-1-bb63507d-c4c3-4ad2-8d62-456018f6da02.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
 </div>
-<div id="f15396e5-d972-46bd-bde1-5b722fb3e49d" class="cell" data-tags="[]" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"results.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can see it at the bottom!</p>
+</section>
+<section id="identify-data-to-scrape" class="level5">
+<h5 class="anchored" data-anchor-id="identify-data-to-scrape">Identify Data to Scrape</h5>
+<p>Once you’re in the developer tools, explore the HTML structure to identify the elements containing the data you want to scrape. Look for unique identifiers such as class names, IDs, or tag names that can help you locate the desired information. I will guide you with the details later, don’t worry.</p>
+</section>
+<section id="plan-scraping-strategy-1" class="level5">
+<h5 class="anchored" data-anchor-id="plan-scraping-strategy-1">Plan Scraping Strategy</h5>
+<p>Based on the information you want to extract and its location in the HTML structure, plan your scraping strategy. Determine which Scrapy selectors (e.g., CSS selectors, XPath expressions) you’ll use to target and extract the data.</p>
+<p>You might want to get familar with these before we proceed:</p>
+<p><code>Request objects</code>: https://docs.scrapy.org/en/latest/topics/request-response.html#request-objectsLinks</p>
+<p><code>Response objects</code>: https://docs.scrapy.org/en/latest/topics/request-response.html#response-objectsLinks</p>
+<p><code>Selector objects</code>: https://docs.scrapy.org/en/latest/topics/selectors.html#scrapy.selector.Selector</p>
+</section>
+</section>
+<section id="implementation" class="level3">
+<h3 class="anchored" data-anchor-id="implementation">1.3 Implementation</h3>
+<p>In this section, we’ll create a Scrapy spider named <code>tmdb_spider.py</code> to scrape data from TMDB (The Movie Database) for a specific movie. We’ll set it up to accept the movie’s subdirectory as a command-line argument for easy customization.</p>
+<section id="step-1-create-tmdb_spider.py" class="level4">
+<h4 class="anchored" data-anchor-id="step-1-create-tmdb_spider.py">Step 1: Create <code>tmdb_spider.py</code></h4>
+<p>Inside the <code>spiders</code> directory of your Scrapy project (<code>TMDB_scraper</code>), create a new Python file named <code>tmdb_spider.py</code>. You can do this manually or by running the following command in your terminal:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> TMDB_scraper/spiders/tmdb_spider.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Open this file in a text editor and add the following lines:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TmdbSpider(scrapy.Spider):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'tmdb_spider'</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, subdir<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.start_urls <span class="op">=</span> [<span class="ss">f"https://www.themoviedb.org/movie/</span><span class="sc">{</span>subdir<span class="sc">}</span><span class="ss">/"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>__init__</code> method in the spider class initializes the spider with the provided subdirectory argument. This allows us to customize the URL to scrape based on the movie’s subdirectory.</p>
+<p>To run the spider and scrape data for a specific movie, use the following command:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scrapy</span> crawl tmdb_spider <span class="at">-o</span> movies.csv <span class="at">-a</span> subdir=671-harry-potter-and-the-philosopher-s-stone</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>671-harry-potter-and-the-philosopher-s-stone</code> with the subdirectory of the movie you want to scrape. This command instructs Scrapy to crawl the specified URL and save the scraped data to a CSV file named <code>movies.csv</code>.</p>
+<p>You’ve successfully created a Scrapy spider named <code>tmdb_spider.py</code> configured to scrape data from TMDB for a specific movie. By providing the movie’s subdirectory as a command-line argument, you can easily customize the spider to scrape data for different movies.</p>
+<p>Here’s a basic outline of the <code>TmdbSpider</code> class:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TmdbSpider(scrapy.Spider):</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'tmdb_spider'</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, subdir<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.start_urls <span class="op">=</span> [<span class="ss">f"https://www.themoviedb.org/movie/</span><span class="sc">{</span>subdir<span class="sc">}</span><span class="ss">/"</span>]</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Navigate to the Full Cast &amp; Crew page</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse_full_credits(<span class="va">self</span>, response):</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract information about the cast members</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Navigate to each actor's personal page</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Call parse_actor_page for each actor</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse_actor_page(<span class="va">self</span>, response):</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract the actor's acting history from their personal page</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="parseself-response" class="level4">
+<h4 class="anchored" data-anchor-id="parseself-response">1.2.1 parse(self, response)</h4>
+<p>In the <code>parse</code> method: - We construct the URL for the Full Cast &amp; Crew page by appending “cast” to the movie page’s URL. - We then yield a <code>scrapy.Request</code> object with the URL of the Full Cast &amp; Crew page and specify <code>parse_full_credits</code> as the callback method.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TmdbSpider(scrapy.Spider):</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'tmdb_spider'</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, subdir<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.start_urls <span class="op">=</span> [<span class="ss">f"https://www.themoviedb.org/movie/</span><span class="sc">{</span>subdir<span class="sc">}</span><span class="ss">/"</span>]</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Navigate to the Full Cast &amp; Crew page by adding "cast" after the start URL</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        full_credits_url <span class="op">=</span> response.url <span class="op">+</span> <span class="st">"cast"</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># After navigation, call parse_full_credits</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> scrapy.Request(full_credits_url, callback<span class="op">=</span><span class="va">self</span>.parse_full_credits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s break down each part of the provided code snippet:</p>
+<ol type="1">
+<li><p><code>def parse(self, response):</code> This is a method definition in a Scrapy spider class. It’s the default method called by Scrapy to handle responses downloaded for each request made.</p></li>
+<li><p><code>full_credits_url = response.url + "cast"</code>: This line of code constructs the URL for the Full Cast &amp; Crew page. It takes the current URL of the response object and appends “cast” to it, which is the relative URL for the Full Cast &amp; Crew page.</p></li>
+<li><p><code>yield scrapy.Request(full_credits_url, callback=self.parse_full_credits)</code>: This line of code yields a new Scrapy Request object. Scrapy uses <code>Request</code> and <code>Response</code> objects for crawling web sites.Typically, Request objects are generated in the spiders and pass across the system until they reach the Downloader, which executes the request and returns a Response object which travels back to the spider that issued the request. This initiates a new request to the <code>full_credits_url</code> URL and specifies <code>self.parse_full_credits</code> as the callback function to handle the response.</p></li>
+</ol>
+<p>In summary, this <code>parse</code> method is responsible for constructing a request to navigate to the Full Cast &amp; Crew page and then calling the <code>parse_full_credits</code> method to handle the response from that page.</p>
+</section>
+<section id="parse_full_creditsself-response" class="level4">
+<h4 class="anchored" data-anchor-id="parse_full_creditsself-response">1.2.2 parse_full_credits(self, response)</h4>
+<p>The overall code looks like this:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_full_credits(<span class="va">self</span>, response):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    cast_list <span class="op">=</span> response.css(<span class="st">'h3:contains("Cast") + ol li div.info'</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> actor <span class="kw">in</span> cast_list:</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        actor_url <span class="op">=</span> actor.css(<span class="st">"a::attr(href)"</span>).get()</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        actor_page_url <span class="op">=</span> response.urljoin(actor_url)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> scrapy.Request(actor_page_url, callback<span class="op">=</span><span class="va">self</span>.parse_actor_page)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li><p><code>def parse_full_credits(self, response):</code> This is a method definition within a Scrapy spider class. It’s intended to handle the response from the Full Cast &amp; Crew page.</p></li>
+<li><p><code>cast_list = response.css('h3:contains("Cast") + ol li div.info')</code>: This line of code uses CSS selectors to locate the elements containing information about each actor in the cast. It selects the <code>&lt;div&gt;</code> elements with the class “info” that are within list items <code>(&lt;li&gt;)</code> following an <code>&lt;ol&gt;</code> element immediately after an <code>&lt;h3&gt;</code> element containing the text “Cast” since we only want the Cast section instead of Crew. For how to use selector, make sure go through this: https://docs.scrapy.org/en/latest/topics/selectors.html</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/3d5da649-dc42-4a6d-98f9-5ecadadcf14c-1-c22fdb58-f0a3-46db-965a-8c4637a57f20.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<p>Now we have all the casts information, we need to extract each person’s page url by iteration.</p>
+<ol start="3" type="1">
+<li><p><code>for actor in cast_list:</code>: This loop iterates over each element in the cast_list.</p></li>
+<li><p><code>actor_url = actor.css("a::attr(href)").get()</code>: Within each iteration of the loop, this line of code extracts the URL of the actor’s personal page. It selects the value of the “href” attribute of the <code>&lt;a&gt;</code> element within the current actor’s <code>&lt;div&gt;</code> as you see in the screenshot above.</p></li>
+<li><p><code>actor_page_url = response.urljoin(actor_url)</code>: This line constructs the absolute URL for the actor’s personal page by joining the relative URL extracted in the previous step with the base URL of the current response.</p></li>
+<li><p><code>yield scrapy.Request(actor_page_url, callback=self.parse_actor_page)</code>: Finally, this line yields a new Scrapy Request object for each actor’s personal page. It specifies self.parse_actor_page as the callback function to handle the response from each actor’s page.</p></li>
+</ol>
+<p>In summary, this parse_full_credits method is responsible for extracting the URLs of each actor’s personal page from the Full Cast &amp; Crew page and yielding requests to scrape data from those individual pages using the parse_actor_page method.</p>
+</section>
+<section id="parse_actor_pageself-response" class="level4">
+<h4 class="anchored" data-anchor-id="parse_actor_pageself-response">1.2.3 parse_actor_page(self, response)</h4>
+<p>In this tutorial, we’ll cover how to scrape data from an actor’s personal page, focusing on extracting their past or current movies or TV shows.</p>
+<p>The overall code looks like this:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_actor_page(<span class="va">self</span>, response):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Yield a dictionary for each movie or TV show the actor has worked in an "Acting" role</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    actor_name <span class="op">=</span> response.css(<span class="st">'div.title h2.title a::text'</span>).get()</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    acting_table <span class="op">=</span> response.css(<span class="st">'h3:contains("Acting") + table.card.credits'</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    name_list <span class="op">=</span> acting_table.css(<span class="st">"a.tooltip"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name <span class="kw">in</span> name_list:</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        movie_or_TV_name <span class="op">=</span> name.css(<span class="st">"bdi::text"</span>).get() </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> {<span class="st">"actor"</span>: actor_name, <span class="st">"movie_or_TV_name"</span>: movie_or_TV_name}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/aa788ee6-312d-4d71-9b83-4d48037755df-1-55ccf44a-86a7-497d-ad62-c48c1df28051.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li><code>actor_name = response.css('div.title h2.title a::text').get()</code>: This line extracts the actor’s name from the title of their personal page, which is under <code>&lt;div class='title'&gt;</code>, then under <code>&lt;h2 class='title'&gt;</code> then inside the <code>&lt;a&gt;``&lt;/a&gt;</code> here we can get the name of the actor and store it in the <code>actor_name</code>, which also can be done in pervious method, feel free to try it out!</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/aa788ee6-312d-4d71-9b83-4d48037755df-4-e971134e-010c-4579-870a-76793b448332.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><code>acting_table = response.css('h3:contains("Acting") + table.card.credits')</code>: This line selects the table containing the actor’s acting credits. It looks for the heading “Acting” and then selects the adjacent table with the class “card” and “credits”. Note that there are several tables under the <code>&lt;div class='credits_list'&gt;</code> make sure you only capture the table with Acting as the header.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/aa788ee6-312d-4d71-9b83-4d48037755df-3-8616c361-59c5-492e-ab44-f84beff45003.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li><p><code>name_list = acting_table.css("a.tooltip")</code>: This line selects all the name of a movie or TV show in which the actor has acted.</p></li>
+<li><p><code>for name in name_list:</code>: This loop iterates over each link in the <code>name_list</code> since we only want the text part of the list.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/aa788ee6-312d-4d71-9b83-4d48037755df-2-5c8b5ae3-2765-4bcb-ad11-6cc4b3fc0351.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li><p><code>movie_or_TV_name = name.css("bdi::text").get()</code>: Within each iteration of the loop, this line extracts the text representing the name of the movie or TV show from the link.</p></li>
+<li><p><code>yield {"actor": actor_name, "movie_or_TV_name": movie_or_TV_name}</code>: Finally, this line yields a dictionary containing the actor’s name and the name of the movie or TV show they acted in.</p></li>
+</ol>
+<p>Finally, we are done with the scraping part. We’ve learned how to extract an actor’s acting roles from their personal page using Scrapy. By understanding the structure of the actor’s page and using appropriate CSS selectors, we were able to extract the desired information effectively.</p>
+<p>Now try to run this in terminal to implement the scraper:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">scrapy</span> crawl tmdb_spider <span class="at">-o</span> results.csv <span class="at">-a</span> subdir=157336-interstellar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Feel free to replace any Movie or TV show you like!</p>
+<p>This would give you a <code>results.csv</code> scraped. Before we proceed, remember to remove the restriction in the <code>settings.py</code>.</p>
+</section>
+</section>
+</section>
+<section id="visualization-and-recommendation-1" class="level2">
+<h2 class="anchored" data-anchor-id="visualization-and-recommendation-1">2. Visualization and Recommendation</h2>
+<div id="70a6a269-f4a2-4b7f-8ac4-aaecc67396dc" class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import libraries</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotly <span class="im">import</span> express <span class="im">as</span> px</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s import this file into our notebook to see what we got!</p>
+<div id="f15396e5-d972-46bd-bde1-5b722fb3e49d" class="cell" data-tags="[]" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"results.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="d39aab30-c4c6-435b-99d2-7d44b1a8b919" class="cell" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 2063 entries, 0 to 2062
@@ -221,9 +526,10 @@ dtypes: object(2)
 memory usage: 32.4+ KB</code></pre>
 </div>
 </div>
-<div id="0a88433b-2a83-44c9-b222-8f7de879c9d4" class="cell" data-tags="[]" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<p>We’ve got 2063 movies and TV shows!</p>
+<div id="0a88433b-2a83-44c9-b222-8f7de879c9d4" class="cell" data-tags="[]" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -267,15 +573,18 @@ memory usage: 32.4+ KB</code></pre>
 </div>
 </div>
 </div>
-<div id="28558ac3-c865-4f51-9c38-aa1abec69561" class="cell" data-tags="[]" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>recmd_movies_or_TV <span class="op">=</span> pd.DataFrame(df.movie_or_TV_name.value_counts().reset_index())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s determine the overlaps between these movies and TV shows to form the basis of our recommendation. The logic is straightforward: we’ll analyze the movies or TV shows that feature the actors from your favorite movie or show in the highest quantity.</p>
+<div id="28558ac3-c865-4f51-9c38-aa1abec69561" class="cell" data-tags="[]" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>recmd_movies_or_TV <span class="op">=</span> pd.DataFrame(df.movie_or_TV_name.value_counts().reset_index())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="504fe57d-3d11-4fe3-bac8-e2dc6ef1a12b" class="cell" data-tags="[]" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>recmd_movies_or_TV <span class="op">=</span> recmd_movies_or_TV.rename(columns<span class="op">=</span>{<span class="st">'movie_or_TV_name'</span>:<span class="st">'movie names'</span>, <span class="st">'count'</span>:<span class="st">'number of shared actors'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>df.movie_or_TV_name.value_counts()</code> we extract the <code>movie_or_TV_name</code> column from the dataframe and get unique values of this column with its count through <code>.value_counts()</code>, which would give us a Series. In order to make use of this Series, we reset the index through <code>.reset_index()</code> and transfer it into another data frame via <code>pd.DataFrame()</code>.</p>
+<div id="138f62d6-5c44-4680-af38-7cb9c8df3d2a" class="cell" data-tags="[]" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># original column name are movie_or_TV_name and count, we change them to understand it easier into movie names and number of shared actors</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>recmd_movies_or_TV <span class="op">=</span> recmd_movies_or_TV.rename(columns<span class="op">=</span>{<span class="st">'movie_or_TV_name'</span>:<span class="st">'movie names'</span>, <span class="st">'count'</span>:<span class="st">'number of shared actors'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9b759c67-242f-4596-9f9c-dee276d544d3" class="cell" data-tags="[]" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>recmd_movies_or_TV[<span class="st">'number of shared actors'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="40">
+<div id="9b759c67-242f-4596-9f9c-dee276d544d3" class="cell" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>recmd_movies_or_TV[<span class="st">'number of shared actors'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>number of shared actors
 1     1602
 2      107
@@ -290,61 +599,58 @@ memory usage: 32.4+ KB</code></pre>
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="88af550f-39df-4181-aeb7-bb90e80a771f" class="cell" data-tags="[]" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>recmd_more <span class="op">=</span> recmd_movies_or_TV[recmd_movies_or_TV[<span class="st">'number of shared actors'</span>] <span class="op">&gt;=</span> <span class="dv">4</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What we observe here is that 1602 rows of the data correspond to a single actor. This indicates that these actors are the only ones in the Interstellar crew who have performed in another movie or show, without any other members of the Interstellar crew. The same interpretation applies to the subsequent results, and the output is sorted based on the count.</p>
+<p>Next, we may want to split the data to visualize it in two parts, as we are not interested in the solo performances for those 1602 rows, or in movies or TV shows that contain only 2, 3, or 4 members of the full crew. You can define the splitting criteria according to your own preferences; here, I am simply dividing it into <code>recmd_more</code> and <code>recmd_less</code> based on the presence of 4 or more shared actors.</p>
+<div id="88af550f-39df-4181-aeb7-bb90e80a771f" class="cell" data-tags="[]" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>recmd_more <span class="op">=</span> recmd_movies_or_TV[recmd_movies_or_TV[<span class="st">'number of shared actors'</span>] <span class="op">&gt;=</span> <span class="dv">4</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ab4b87d7-d3e8-4689-a1b9-0895b728ef47" class="cell" data-tags="[]" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>recmd_less <span class="op">=</span> recmd_movies_or_TV[recmd_movies_or_TV[<span class="st">'number of shared actors'</span>] <span class="op">&lt;</span> <span class="dv">4</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ab4b87d7-d3e8-4689-a1b9-0895b728ef47" class="cell" data-tags="[]" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>recmd_less <span class="op">=</span> recmd_movies_or_TV[recmd_movies_or_TV[<span class="st">'number of shared actors'</span>] <span class="op">&lt;</span> <span class="dv">4</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="da1b98c9-7baa-4a3d-94dc-253052088a51" class="cell" data-tags="[]" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(recmd_more, x<span class="op">=</span><span class="st">'number of shared actors'</span>, y<span class="op">=</span><span class="st">'movie names'</span>, orientation<span class="op">=</span><span class="st">'h'</span>,</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>             text<span class="op">=</span><span class="st">'number of shared actors'</span>, title<span class="op">=</span><span class="st">'Movie Names and Number of Shared Actors &gt;= 5'</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>fig.update_traces(textposition<span class="op">=</span><span class="st">'outside'</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Customizing the layout</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'Number of Shared Actors'</span>,</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">'Movie Names'</span>,</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    yaxis_categoryorder<span class="op">=</span><span class="st">'total ascending'</span>,  <span class="co"># Optional: Order y-axis categories by total count</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(tickmode<span class="op">=</span><span class="st">'linear'</span>),  <span class="co"># Optional: Ensure that y-axis ticks are shown for every movie</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">600</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We create a horizontal bar plot using Plotly Express. We specify the DataFrame <code>recmd_more</code> as the data source, set the ‘number of shared actors’ as the x-axis, ‘movie names’ as the y-axis, and provide additional parameters for orientation and text.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(recmd_more, x<span class="op">=</span><span class="st">'number of shared actors'</span>, y<span class="op">=</span><span class="st">'movie names'</span>, orientation<span class="op">=</span><span class="st">'h'</span>,</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>             text<span class="op">=</span><span class="st">'number of shared actors'</span>, title<span class="op">=</span><span class="st">'Movie Names and Number of Shared Actors &gt;= 5'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can adjust the position of the text annotations on the bars using the <code>update_traces</code> method.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>fig.update_traces(textposition<span class="op">=</span><span class="st">'outside'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Next, we customize the layout of the plot by specifying axis titles, ordering categories, adjusting tick marks, and setting the height of the plot.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'Number of Shared Actors'</span>,</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">'Movie Names'</span>,</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    yaxis_categoryorder<span class="op">=</span><span class="st">'total ascending'</span>,  <span class="co"># Optional: Order y-axis categories by total count</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(tickmode<span class="op">=</span><span class="st">'linear'</span>),  <span class="co"># Optional: Ensure that y-axis ticks are shown for every movie</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">600</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>By following these steps, you can create a customized horizontal bar plot using Plotly Express in Python. Experiment with different parameters and settings to achieve the desired visualization for your data.</p>
+<p>Feel free to further customize the plot according to your specific requirements, such as adjusting colors, fonts, or adding annotations.</p>
+<p>Here is the full code:</p>
+<div id="da1b98c9-7baa-4a3d-94dc-253052088a51" class="cell" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(recmd_more, x<span class="op">=</span><span class="st">'number of shared actors'</span>, y<span class="op">=</span><span class="st">'movie names'</span>, orientation<span class="op">=</span><span class="st">'h'</span>,</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>             text<span class="op">=</span><span class="st">'number of shared actors'</span>, title<span class="op">=</span><span class="st">'Movie Names and Number of Shared Actors &gt;= 5'</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>fig.update_traces(textposition<span class="op">=</span><span class="st">'outside'</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Customizing the layout</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'Number of Shared Actors'</span>,</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">'Movie Names'</span>,</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    yaxis_categoryorder<span class="op">=</span><span class="st">'total ascending'</span>,  <span class="co"># Optional: Order y-axis categories by total count</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(tickmode<span class="op">=</span><span class="st">'linear'</span>),  <span class="co"># Optional: Ensure that y-axis ticks are shown for every movie</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>                            <div id="3842bafd-5b11-4fa7-9a90-4adaec6e33ac" class="plotly-graph-div" style="height:600px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("3842bafd-5b11-4fa7-9a90-4adaec6e33ac")) {                    Plotly.newPlot(                        "3842bafd-5b11-4fa7-9a90-4adaec6e33ac",                        [{"alignmentgroup":"True","hovertemplate":"number of shared actors=%{text}<br>movie names=%{y}<extra></extra>","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"h","showlegend":false,"text":[35.0,10.0,9.0,9.0,8.0,8.0,7.0,7.0,7.0,7.0,7.0,7.0,6.0,6.0,6.0,6.0,6.0,6.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0],"textposition":"outside","x":[35,10,9,9,8,8,7,7,7,7,7,7,6,6,6,6,6,6,4,4,4,4,4,4,4,4,4],"xaxis":"x","y":["Interstellar","Saturday Night Live","Late Night with Seth Meyers","The View","Inside 'Interstellar'","The Tonight Show Starring Jimmy Fallon","The Kelly Clarkson Show","The Oscars","The Graham Norton Show","Close Up with The Hollywood Reporter","The Late Show with Stephen Colbert","LIVE with Kelly and Mark","Late Night with Conan O'Brien","Jimmy Kimmel Live!","The Dark Knight Rises","Conan","Variety Studio: Actors on Actors","The Daily Show","The Tonight Show with Jay Leno","Watch What Happens Live with Andy Cohen","Law & Order","Oppenheimer","Teen Choice Awards","Law & Order: Special Victims Unit","NCIS","Law & Order: Criminal Intent","Interstellar: Nolan's Odyssey"],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Number of Shared Actors"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Movie Names"},"categoryorder":"total ascending","tickmode":"linear"},"legend":{"tracegroupgap":0},"title":{"text":"Movie Names and Number of Shared Actors >= 5"},"barmode":"relative","height":600},                        {"responsive": true}                    ).then(function(){
-                            
-var gd = document.getElementById('3842bafd-5b11-4fa7-9a90-4adaec6e33ac');
-var x = new MutationObserver(function (mutations, observer) {{
-        var display = window.getComputedStyle(gd).display;
-        if (!display || display === 'none') {{
-            console.log([gd, 'removed!']);
-            Plotly.purge(gd);
-            observer.disconnect();
-        }}
-}});
-
-// Listen for the removal of the full notebook cells
-var notebookContainer = gd.closest('#notebook-container');
-if (notebookContainer) {{
-    x.observe(notebookContainer, {childList: true});
-}}
-
-// Listen for the clearing of the current output cell
-var outputEl = gd.closest('.output');
-if (outputEl) {{
-    x.observe(outputEl, {childList: true});
-}}
-
-                        })                };                });            </script>        </div>
+<iframe scrolling="no" width="100%" height="520" src="iframe_figures/figure_13.html" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
+<p>As we can see from the plot, Interstellar would of course be the top one we would recommend the it appears to be Saturday Night Live, which shares 10 actors. The View, Late Night with Seth Meyers share 9 actors with Interstellar. Well this would be a tool to do the recommand that is super obvious for the reader or the viewer.</p>
 <div id="8e59a2ed-b1b1-4db7-9e6b-e22c741e1428" class="cell" data-tags="[]" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(recmd_less[<span class="st">'number of shared actors'</span>], bins<span class="op">=</span><span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>), kde<span class="op">=</span><span class="va">False</span>, color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Number of Shared Actors'</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of Movies/TV Shows'</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Movies/TV Shows with Less Than 5 Shared Actors'</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(recmd_less[<span class="st">'number of shared actors'</span>], bins<span class="op">=</span><span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>), kde<span class="op">=</span><span class="va">False</span>, color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Number of Shared Actors'</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of Movies/TV Shows'</span>)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Movies/TV Shows with Less Than 5 Shared Actors'</span>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -353,30 +659,31 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-<div id="13fac73c-02a2-4366-b969-379a6b72eb06" class="cell" data-tags="[]" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>recmd_less.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="46">
-<pre><code>movie names                       number of shared actors
-'Saving Private Ryan': Boot Camp  1                          1
-Steven Arnold: Heavenly Bodies    1                          1
-Stephen King: Master of Horror    1                          1
-Stephen King's Kingdom Hospital   1                          1
-Station 19                        1                          1
-                                                            ..
-House                             2                          1
-Hot Tub Time Machine 2            1                          1
-Hot Tub Time Machine              1                          1
-Hot Summer Nights                 1                          1
-알아두면 쓸데없는 지구별 잡학사전                1                          1
-Name: count, Length: 1727, dtype: int64</code></pre>
+<p>Since we cannot plot the thousands rows, we can visualize it through histplot though this provides not that much of the information we need for recommendation.</p>
+<p>Now we are going to see that for each actor, the percentage of sole performance on the overall acting histroy, sole performance here means not with any other actors in the Interstellar crew.</p>
+<p>Before we begin, let’s define the required columns in our DataFrame:</p>
+<ul>
+<li><code>isDup</code>: A boolean column indicating whether the movie or TV show is unique. If <code>True</code>, it means there is a duplicate movie or TV show in the DataFrame, indicating it’s not a sole performance.</li>
+<li><code>dup_cnt</code>: The count of occurrences where <code>isDup</code> is <code>True</code> or <code>False</code>, grouped by actor and <code>isDup</code>.</li>
+<li><code>total_cnt</code>: The total count of all acting roles for each actor.</li>
+</ul>
+<p>Calculate <code>isDup</code> Column</p>
+<p>We’ll calculate the <code>isDup</code> column using the <code>duplicated</code> method, which marks duplicate entries as <code>True</code> and unique entries as <code>False</code>.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isDup'</span>] <span class="op">=</span> df.duplicated(subset<span class="op">=</span>[<span class="st">'movie_or_TV_name'</span>], keep<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Calculate <code>dup_cnt</code> and <code>total_cnt</code> Columns</p>
+<p>Next, we’ll calculate the <code>dup_cnt</code> and <code>total_cnt</code> columns using the <code>groupby</code> method along with the <code>transform</code> function to get the count of occurrences for each actor.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'dup_cnt'</span>] <span class="op">=</span> df.groupby([<span class="st">"actor"</span>, <span class="st">'isDup'</span>])[<span class="st">'movie_or_TV_name'</span>].transform(<span class="st">'count'</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_cnt'</span>] <span class="op">=</span> df.groupby([<span class="st">"actor"</span>])[<span class="st">'movie_or_TV_name'</span>].transform(<span class="st">'count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="dbc1da82-397f-43f5-9e7a-74f49c95c923" class="cell" data-tags="[]" data-execution_count="130">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isDup'</span>] <span class="op">=</span> df.duplicated(subset<span class="op">=</span>[<span class="st">'movie_or_TV_name'</span>], keep<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'dup_cnt'</span>] <span class="op">=</span> df.groupby([<span class="st">"actor"</span>, <span class="st">'isDup'</span>])[<span class="st">'movie_or_TV_name'</span>].transform(<span class="st">'count'</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_cnt'</span>] <span class="op">=</span> df.groupby([<span class="st">"actor"</span>])[<span class="st">'movie_or_TV_name'</span>].transform(<span class="st">'count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div id="caa624e3-2679-46b5-8d46-fa902025a7b1" class="cell" data-tags="[]" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>actors <span class="op">=</span> df.groupby(<span class="st">"actor"</span>).<span class="bu">apply</span>(<span class="st">"count"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>actors <span class="op">=</span> actors.reset_index().sort_values(by <span class="op">=</span> <span class="st">"movie_or_TV_name"</span>, ascending <span class="op">=</span> <span class="va">False</span>).rename(columns <span class="op">=</span> {<span class="st">"movie_or_TV_name"</span> :<span class="st">"count"</span>})</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>actors[<span class="st">'Sole Appearance'</span>] <span class="op">=</span> actors[<span class="st">'count'</span>] <span class="op">==</span> <span class="dv">1</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>actors.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="47">
+<div id="b2baf33d-5a87-4e04-b219-aa924706371d" class="cell" data-tags="[]" data-execution_count="137">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="137">
 <div>
 
 
@@ -385,91 +692,135 @@ Name: count, Length: 1727, dtype: int64</code></pre>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th">actor</th>
-<th data-quarto-table-cell-role="th">count</th>
-<th data-quarto-table-cell-role="th">Sole Appearance</th>
+<th data-quarto-table-cell-role="th">movie_or_TV_name</th>
+<th data-quarto-table-cell-role="th">isDup</th>
+<th data-quarto-table-cell-role="th">dup_cnt</th>
+<th data-quarto-table-cell-role="th">total_cnt</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">27</td>
-<td>Michael Caine</td>
-<td>224</td>
-<td>False</td>
+<td data-quarto-table-cell-role="th">0</td>
+<td>William Patrick Brown</td>
+<td>Interstellar</td>
+<td>True</td>
+<td>2</td>
+<td>4</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">17</td>
-<td>John Lithgow</td>
-<td>189</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>William Patrick Brown</td>
+<td>Mighty Med</td>
 <td>False</td>
+<td>2</td>
+<td>4</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">10</td>
-<td>Ellen Burstyn</td>
-<td>181</td>
-<td>False</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>William Patrick Brown</td>
+<td>Friends with Benefits</td>
+<td>True</td>
+<td>2</td>
+<td>4</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">25</td>
-<td>Matt Damon</td>
-<td>163</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>William Patrick Brown</td>
+<td>Chuck</td>
 <td>False</td>
+<td>2</td>
+<td>4</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">26</td>
+<td data-quarto-table-cell-role="th">4</td>
 <td>Matthew McConaughey</td>
-<td>127</td>
+<td>2024</td>
 <td>False</td>
+<td>91</td>
+<td>127</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2058</td>
+<td>John Lithgow</td>
+<td>Dealing: Or the Berkeley-to-Boston Forty-Brick...</td>
+<td>False</td>
+<td>151</td>
+<td>189</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2059</td>
+<td>John Lithgow</td>
+<td>Great Performances</td>
+<td>False</td>
+<td>151</td>
+<td>189</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2060</td>
+<td>John Lithgow</td>
+<td>Tony Awards</td>
+<td>True</td>
+<td>38</td>
+<td>189</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2061</td>
+<td>John Lithgow</td>
+<td>Today</td>
+<td>True</td>
+<td>38</td>
+<td>189</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2062</td>
+<td>John Lithgow</td>
+<td>Hallmark Hall of Fame</td>
+<td>True</td>
+<td>38</td>
+<td>189</td>
 </tr>
 </tbody>
 </table>
 
+<p>2063 rows × 5 columns</p>
 </div>
 </div>
 </div>
-<div id="a1576659-daf4-4716-94a2-c6c5988abc83" class="cell" data-tags="[]" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(actors, x<span class="op">=</span><span class="st">'count'</span>, y<span class="op">=</span><span class="st">'actor'</span>, orientation<span class="op">=</span><span class="st">'h'</span>,</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>             color <span class="op">=</span> <span class="st">"Sole Appearance"</span>, color_discrete_sequence<span class="op">=</span>[<span class="st">'blue'</span>, <span class="st">'yellow'</span>], title<span class="op">=</span><span class="st">'Actors personal acting history'</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>fig.update_traces(textposition<span class="op">=</span><span class="st">'outside'</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Customizing the layout</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'Number of Acting'</span>,</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">'Actor'</span>,</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    yaxis_categoryorder<span class="op">=</span><span class="st">'total ascending'</span>,  <span class="co"># Optional: Order y-axis categories by total count</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(tickmode<span class="op">=</span><span class="st">'linear'</span>),  <span class="co"># Optional: Ensure that y-axis ticks are shown for every movie</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">600</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now we contruct the plot: Let’s break down what each line of code does:</p>
+<p><code>px.bar(df, x='total_cnt', y='actor', orientation='h', color='isDup', text='total_cnt', title='Sole/Shared Performance Count for Each Actor')</code>: - This line creates a horizontal bar plot using Plotly Express (<code>px.bar</code>). - The DataFrame <code>df</code> is used as the data source. - The x-axis represents the total count of performances (<code>total_cnt</code>). - The y-axis represents the actors (<code>actor</code>). - The bars are oriented horizontally (<code>orientation='h'</code>). - The color of the bars is determined by the <code>isDup</code> column. - The text annotations on the bars display the total count of performances. - The title of the plot is set to ‘Sole/Shared Performance Count for Each Actor’.</p>
+<p><code>fig.update_traces(textposition='outside')</code>: - This line updates the position of the text annotations on the bars to be outside the bars. - By default, the text annotations are placed inside the bars, but setting <code>textposition='outside'</code> moves them outside for better visibility.</p>
+<p><code>yaxis_categoryorder='max ascending'</code>: This line specifies the order of categories (actors) on the y-axis based on the maximum value of their associated data points. Categories with higher maximum values will appear towards the top of the plot, while categories with lower maximum values will appear towards the bottom. You can alter the values to experiment.</p>
+<p><code>yaxis=dict(tickmode='linear')</code>: This line ensures that the tick marks on the y-axis are displayed in a linear fashion. This is the default behavior, so it’s not necessary to explicitly specify it unless you want to override any previous settings.</p>
+<div id="a1576659-daf4-4716-94a2-c6c5988abc83" class="cell" data-tags="[]" data-execution_count="160">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(df, x<span class="op">=</span><span class="st">'total_cnt'</span>, y<span class="op">=</span><span class="st">'actor'</span>, orientation<span class="op">=</span><span class="st">'h'</span>, color<span class="op">=</span><span class="st">'isDup'</span>,</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>             text<span class="op">=</span><span class="st">'total_cnt'</span>, title<span class="op">=</span><span class="st">'Sole/Shared Performance Count for Each Actor'</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>fig.update_traces(textposition<span class="op">=</span><span class="st">'outside'</span>)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Customizing the layout</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'Number of Shared Actors'</span>,</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">'Movie Names'</span>,</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    yaxis_categoryorder<span class="op">=</span><span class="st">'max ascending'</span>,  <span class="co"># Optional: Order y-axis categories by total count</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(tickmode<span class="op">=</span><span class="st">'linear'</span>),  <span class="co"># Optional: Ensure that y-axis ticks are shown for every movie</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">600</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>                            <div id="10a4bcd7-182e-400c-b359-dcd07fd69726" class="plotly-graph-div" style="height:600px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("10a4bcd7-182e-400c-b359-dcd07fd69726")) {                    Plotly.newPlot(                        "10a4bcd7-182e-400c-b359-dcd07fd69726",                        [{"alignmentgroup":"True","hovertemplate":"Sole Appearance=False<br>count=%{x}<br>actor=%{y}<extra></extra>","legendgroup":"False","marker":{"color":"blue","pattern":{"shape":""}},"name":"False","offsetgroup":"False","orientation":"h","showlegend":true,"textposition":"outside","x":[224,189,181,163,127,115,104,103,94,77,76,67,63,60,52,50,42,33,32,28,28,28,25,19,19,17,16,8,5,4,4,4,3,2],"xaxis":"x","y":["Michael Caine","John Lithgow","Ellen Burstyn","Matt Damon","Matthew McConaughey","Anne Hathaway","William Devane","Jessica Chastain","David Oyelowo","Bill Irwin","Francis X. McCarthy","Topher Grace","Brooke Smith","Casey Affleck","Wes Bentley","Timoth\u00e9e Chalamet","Josh Stewart","David Gyasi","Jeff Hephner","Collette Wolfe","Andrew Borba","Joseph Oliveira","Leah Cairns","Elyes Gabel","Mackenzie Foy","Russ Fega","Lena Georgas","Ryan Irving","Alexander Michael Helisek","Liam Dickinson","Flora Nolan","William Patrick Brown","Kristian Van der Heyden","Benjamin Hardy"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Sole Appearance=True<br>count=%{x}<br>actor=%{y}<extra></extra>","legendgroup":"True","marker":{"color":"yellow","pattern":{"shape":""}},"name":"True","offsetgroup":"True","orientation":"h","showlegend":true,"textposition":"outside","x":[1],"xaxis":"x","y":["Griffen Fraser"],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Number of Acting"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Actor"},"categoryorder":"total ascending","tickmode":"linear"},"legend":{"title":{"text":"Sole Appearance"},"tracegroupgap":0},"title":{"text":"Actors personal acting history"},"barmode":"relative","height":600},                        {"responsive": true}                    ).then(function(){
-                            
-var gd = document.getElementById('10a4bcd7-182e-400c-b359-dcd07fd69726');
-var x = new MutationObserver(function (mutations, observer) {{
-        var display = window.getComputedStyle(gd).display;
-        if (!display || display === 'none') {{
-            console.log([gd, 'removed!']);
-            Plotly.purge(gd);
-            observer.disconnect();
-        }}
-}});
-
-// Listen for the removal of the full notebook cells
-var notebookContainer = gd.closest('#notebook-container');
-if (notebookContainer) {{
-    x.observe(notebookContainer, {childList: true});
-}}
-
-// Listen for the clearing of the current output cell
-var outputEl = gd.closest('.output');
-if (outputEl) {{
-    x.observe(outputEl, {childList: true});
-}}
-
-                        })                };                });            </script>        </div>
+<iframe scrolling="no" width="100%" height="620" src="iframe_figures/figure_160.html" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
+<p>By hovering the plot, we can see that Michael Caine, John Lithgow, and Matt Damon have the greatest number of shared movies or TV shows with other crews in the Interstellar even though Michael Caine, John Lithgow, and Ellen Burstyn have the greatest number of actings. Therefore, we could not only recommand by the number of overlap among movies or shows, but also by the ‘popularity’ of the actor.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
