@@ -191,25 +191,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Hello! This is my HW0.</p>
-<section id="load-palmer-penguins-data-set" class="level3">
-<h3 class="anchored" data-anchor-id="load-palmer-penguins-data-set">Load Palmer Penguins data set</h3>
+<p>Hello! Welcome to</p>
+<p>In this post, I’ll show you how to make a nice visualization of the famous “Palmer Penguins” dataset by using the Pandas, Matplotlib, and Seaborn packages in Python.</p>
 <div id="720c7be5" class="cell" data-vscode="{&quot;languageId&quot;:&quot;plaintext&quot;}" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pio.renderers.default<span class="op">=</span><span class="st">"iframe"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="load-the-palmer-penguins-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="load-the-palmer-penguins-data-set">Load The Palmer Penguins Data Set</h3>
 <div id="03db842f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/pic16b-ucla/24W/main/datasets/palmer_penguins.csv"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Pandas is a powerful open-source library in Python used for data manipulation and analysis. It provides easy-to-use data structures and functions to work with structured data. Pandas is commonly used in data preprocessing tasks before feeding data into machine learning models.</p>
 <div id="f47ca6e3" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> penguins.dropna(subset <span class="op">=</span> [<span class="st">"Body Mass (g)"</span>, <span class="st">"Sex"</span>])</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>penguins[<span class="st">"Species"</span>] <span class="op">=</span> penguins[<span class="st">"Species"</span>].<span class="bu">str</span>.split().<span class="bu">str</span>.get(<span class="dv">0</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> penguins[penguins[<span class="st">"Sex"</span>] <span class="op">!=</span> <span class="st">"."</span>]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">"Species"</span>, <span class="st">"Island"</span>, <span class="st">"Sex"</span>, <span class="st">"Culmen Length (mm)"</span>, <span class="st">"Culmen Depth (mm)"</span>, <span class="st">"Flipper Length (mm)"</span>, <span class="st">"Body Mass (g)"</span>]</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> penguins[cols]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop rows with missing values in specific columns</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> penguins.dropna(subset <span class="op">=</span> [<span class="st">"Body Mass (g)"</span>, <span class="st">"Sex"</span>])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the first word of the "Species" column</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>penguins[<span class="st">"Species"</span>] <span class="op">=</span> penguins[<span class="st">"Species"</span>].<span class="bu">str</span>.split().<span class="bu">str</span>.get(<span class="dv">0</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out rows where "Sex" is not specified</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> penguins[penguins[<span class="st">"Sex"</span>] <span class="op">!=</span> <span class="st">"."</span>]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting specific columns</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">"Species"</span>, <span class="st">"Island"</span>, <span class="st">"Sex"</span>, <span class="st">"Culmen Length (mm)"</span>, <span class="st">"Culmen Depth (mm)"</span>, <span class="st">"Flipper Length (mm)"</span>, <span class="st">"Body Mass (g)"</span>]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> penguins[cols]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="78320abd" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>penguins.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -290,12 +297,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="have-a-general-idea-of-the-proportion-of-each-species-and-the-island-they-inhabit." class="level3">
 <h3 class="anchored" data-anchor-id="have-a-general-idea-of-the-proportion-of-each-species-and-the-island-they-inhabit.">Have a general idea of the proportion of each species and the island they inhabit.</h3>
+<p>Matplotlib is a widely used Python library for creating static, interactive, and animated visualizations in Python. It provides a MATLAB-like interface and can generate plots, histograms, power spectra, bar charts, error charts, scatterplots, etc.</p>
 <div id="f096fa9a" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>species <span class="op">=</span> penguins.Species.value_counts()</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>species.plot(kind<span class="op">=</span><span class="st">'pie'</span>,autopct<span class="op">=</span><span class="st">"</span><span class="sc">%.2f%%</span><span class="st">"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Percentage Distribution of Penguin Species'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the occurrences of each species</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>species <span class="op">=</span> penguins.Species.value_counts()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the pie chart</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>species.plot(kind<span class="op">=</span><span class="st">'pie'</span>, autopct<span class="op">=</span><span class="st">"</span><span class="sc">%.2f%%</span><span class="st">"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Percentage Distribution of Penguin Species'</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the pie chart</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>Text(0.5, 1.0, 'Percentage Distribution of Penguin Species')</code></pre>
 </div>
@@ -309,9 +323,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Based on the pie chart, the Palmer Penguins data set predominantly consists of Adelie penguins, accounting for 43.84%, followed by Gentoo penguins at 35.74%, and finally, Chinstrap penguins at 20.42%.</p>
 <div id="0a2fbf75" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>island<span class="op">=</span> penguins.Island.value_counts()</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>island.plot(kind<span class="op">=</span><span class="st">'pie'</span>,autopct<span class="op">=</span><span class="st">"</span><span class="sc">%.2f%%</span><span class="st">"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Percentage Distribution of Penguin on Each Island'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the occurrences of penguins on each island</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>island <span class="op">=</span> penguins.Island.value_counts()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the pie chart</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>island.plot(kind<span class="op">=</span><span class="st">'pie'</span>, autopct<span class="op">=</span><span class="st">"</span><span class="sc">%.2f%%</span><span class="st">"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Percentage Distribution of Penguins on Each Island'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the pie chart</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>Text(0.5, 1.0, 'Percentage Distribution of Penguin on Each Island')</code></pre>
 </div>
@@ -367,6 +387,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="dive-deep-into-the-culmen-length-and-culmen-depth-relationships" class="level3">
 <h3 class="anchored" data-anchor-id="dive-deep-into-the-culmen-length-and-culmen-depth-relationships">Dive deep into the Culmen Length and Culmen Depth relationships</h3>
+<p>Plotly Express is a Python library that provides an easy-to-use interface for creating interactive visualizations. It is built on top of Plotly, a JavaScript library for creating interactive plots. Plotly Express offers a wide range of chart types and customization options.</p>
+<ul>
+<li><code>px.scatter()</code>: This function creates a scatter plot using Plotly Express. We specify the DataFrame penguins and map the columns “Culmen Length (mm)” to the x-axis and “Culmen Depth (mm)” to the y-axis.</li>
+<li><code>color="Species"</code>: This parameter colors the points based on the species of the penguins.</li>
+<li><code>hover_name="Species"</code>: This parameter determines what appears when hovering over each point. Here, we display the species name.</li>
+<li><code>hover_data=["Island", "Sex"]</code>: This parameter adds additional information to be displayed when hovering over each point. We include the island and sex of the penguins.</li>
+<li><code>size="Body Mass (g)"</code>: This parameter sizes the points based on the body mass of the penguins.</li>
+<li><code>size_max=8</code>: This parameter sets the maximum size of the points.</li>
+<li><code>width=500, height=300</code>: These parameters set the width and height of the plot.</li>
+<li><code>opacity=0.5</code>: This parameter sets the opacity of the points to 0.5, making them slightly transparent.</li>
+</ul>
 <div id="d8526423" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -397,10 +428,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="now-lets-explore-the-factors-that-may-contribute-to-the-variation-in-culmen-depth-and-culmen-length-among-different-species." class="level3">
 <h3 class="anchored" data-anchor-id="now-lets-explore-the-factors-that-may-contribute-to-the-variation-in-culmen-depth-and-culmen-length-among-different-species.">Now, let’s explore the factors that may contribute to the variation in culmen depth and culmen length among different species.</h3>
+<p>First let’s do some data preprocessing:</p>
+<p>The line of code <code>penguins_encoded = pd.get_dummies(penguins, columns=["Species", "Island", "Sex"], drop_first=True)</code> is used to convert categorical values into numerical values through a process called one-hot encoding.</p>
+<p>Explanation:</p>
+<ol type="1">
+<li><p>Categorical Variables: Categorical variables are variables that can take on a limited, and usually fixed, number of possible values. In the DataFrame <code>penguins</code>, the columns “Species”, “Island”, and “Sex” are categorical variables because they represent categories rather than numerical quantities.</p></li>
+<li><p>One-Hot Encoding: One-hot encoding is a technique used to convert categorical variables into a numerical format that can be provided as input to machine learning algorithms. In this encoding scheme, each category is represented as a binary vector, where each element of the vector corresponds to one category. The element representing the category of a particular observation is set to 1, while all other elements are set to 0.</p></li>
+<li><p>pd.get_dummies() Function: The <code>pd.get_dummies()</code> function provided by the Pandas library is used to perform one-hot encoding. It creates a new DataFrame where each categorical variable specified in the <code>columns</code> parameter is converted into one-hot encoded columns.</p></li>
+<li><p>drop_first=True: The <code>drop_first</code> parameter is set to <code>True</code> to avoid multicollinearity in the dataset. When <code>drop_first=True</code>, the first category for each variable is dropped after encoding, leaving only <code>n-1</code> binary columns for <code>n</code> categories. This prevents redundancy in the data, as the dropped category can be inferred from the other binary columns. It also helps to avoid issues such as the “dummy variable trap” in regression analysis.</p></li>
+<li><p>Output: After executing this line of code, <code>penguins_encoded</code> will contain the original columns from <code>penguins</code>, along with new binary columns representing the one-hot encoded categorical variables. Each binary column corresponds to a unique category within the original categorical variable. The dataset is now in a format suitable for many machine learning algorithms that require numerical input.</p></li>
+</ol>
 <div id="8fb45370" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convert categorical values into numerical values</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>penguins_encoded <span class="op">=</span> pd.get_dummies(penguins, columns<span class="op">=</span>[<span class="st">"Species"</span>, <span class="st">"Island"</span>, <span class="st">"Sex"</span>], drop_first<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Since we want to find out each variable’s relation with the Culmen Length and Culmen Depth, the following code will add 2 extra columns for <code>Species_Adelie</code> and <code>Island_Biscoe</code> since they would not be included in the data frame due to <code>get_dummies</code> would neglact these 2 columns and replace it with other columns being False and False.</p>
 <div id="edccaa9d-e12b-43c5-914d-a24e3d77edd1" class="cell" data-tags="[]" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>penguins_encoded[<span class="st">'Species_Adelie'</span>] <span class="op">=</span> <span class="op">~</span>penguins_encoded[<span class="st">'Species_Chinstrap'</span>] <span class="op">&amp;</span> <span class="op">~</span>penguins_encoded[<span class="st">'Species_Gentoo'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
