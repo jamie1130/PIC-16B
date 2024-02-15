@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.541">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jamie">
+<meta name="dcterms.date" content="2024-02-14">
+
+<title>Jamie’s Blog - Message Hub</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Jamie’s Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Message Hub</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">HOMEWORK</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jamie </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 14, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Building a Simple Message Bank Web Application with Flask: A Step-by-Step Tutorial</p>
+<section id="table-of-contents" class="level2">
+<h2 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">1. Introduction</h3>
+</section>
+<section id="document-composition" class="level3">
+<h3 class="anchored" data-anchor-id="document-composition">2. Document composition</h3>
+<pre><code>2.1 templates
+    2.1.1 base.html
+    2.1.2 main.html
+    2.1.3 submit.html
+    2.1.4 view.html
+2.2 app.py
+2.3 static (style.css)</code></pre>
+</section>
+<section id="introduction-1" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-1">1. Introduction</h3>
+<p>Welcome to this tutorial where you’ll learn how to create a simple web application using Flask. In this blog post, I’ll guide you through the process of building a message bank web app from scratch and describe each step along the way. By the end of this tutorial, you’ll have a basic understanding of Flask fundamentals, database skills, and how to apply basic CSS to enhance the appearance of your web app.</p>
+<p>You are free to build on any of the examples, as well as any other resources you are able to find.</p>
+<p>You can find the code for this tutorial here: https://github.com/jamie1130/PIC-16B</p>
+<p>Let’s take a peek at what this website can do!</p>
+<p>This is the first thing you would see when you open the page, the <code>Main page</code>: <img src="index_files/figure-html/cell-2-4-image.png" class="img-fluid" alt="image.png"></p>
+<p>Then you can either view other’s messages by click <code>Messages</code> at the bottom or compose one by yourself. Let’s try to write one:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-2-1-image-2.png" class="img-fluid figure-img"></p>
+<figcaption>image-2.png</figcaption>
+</figure>
+</div>
+<p>Message sent: <img src="index_files/figure-html/cell-2-2-image-3.png" class="img-fluid" alt="image-3.png"></p>
+<p>And it will be stored in the message bank and you can view it when you want:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-2-3-image-4.png" class="img-fluid figure-img"></p>
+<figcaption>image-4.png</figcaption>
+</figure>
+</div>
+<p>At the third row you can see your message!</p>
+</section>
+<section id="document-composition-1" class="level3">
+<h3 class="anchored" data-anchor-id="document-composition-1">2. Document composition</h3>
+<section id="some-preparation" class="level4">
+<h4 class="anchored" data-anchor-id="some-preparation">Some preparation:</h4>
+<p>First we are going to deal with the webpage structure using Jinjia template and the logic behind it using Flask.</p>
+<p>A few things you might want to know before we proceed:</p>
+<p><strong>Jinja</strong> is a modern and designer-friendly templating engine for Python programming language. It is widely used in web development with frameworks like Flask and Django.</p>
+<p>A <strong>Jinja</strong> template is a text file containing a mixture of static text and template tags, which are special syntax blocks or expressions recognized by the <strong>Jinja</strong> engine. These template tags allow you to inject dynamic content, perform control flow operations, and execute logic directly within your HTML or other text-based documents.</p>
+<p>Here are some key features of <strong>Jinja</strong> templates:</p>
+<ol type="1">
+<li><p><strong>Template Inheritance</strong>: Jinja supports template inheritance, allowing you to define a base template with common layout and structure, and then extend or override specific sections in child templates.</p></li>
+<li><p><strong>Variables</strong>: You can use variables within your templates to insert dynamic content. These variables are typically passed from the Python code to the template during rendering.</p></li>
+<li><p><strong>Control Structures</strong>: Jinja provides control structures like loops and conditionals, allowing you to perform logic and iterate over data directly within your templates.</p></li>
+<li><p><strong>Filters</strong>: Filters allow you to modify the output of variables in your templates. For example, you can apply filters to format dates, convert strings to uppercase, or perform other transformations.</p></li>
+<li><p><strong>Macros</strong>: Macros are reusable blocks of code that can be defined once and called multiple times within a template. They are similar to functions in programming languages.</p></li>
+<li><p><strong>Comments</strong>: Jinja templates support comments, allowing you to add explanatory notes or reminders within your template files.</p></li>
+</ol>
+<p>Overall, Jinja templates provide a powerful and flexible way to generate dynamic content for web applications, making it easier to separate presentation logic from application logic.</p>
+<p><strong>Flask</strong> is a lightweight and flexible web framework for Python. It is designed to make getting started with web development quick and easy, while still being powerful enough to build complex web applications.</p>
+<p>Key features of <strong>Flask</strong> include:</p>
+<ol type="1">
+<li><p><strong>Minimalistic</strong>: Flask is minimalist by design. It provides only the essential components needed for web development, allowing developers to add functionality as needed through extensions.</p></li>
+<li><p><strong>Easy to Use</strong>: Flask is known for its simplicity and ease of use. Its API is intuitive and straightforward, making it a great choice for beginners and experienced developers alike.</p></li>
+<li><p><strong>Extensible</strong>: Flask is highly extensible. It provides a modular architecture that allows developers to easily add third-party extensions to add additional functionality to their applications.</p></li>
+<li><p><strong>Werkzeug and Jinja2 Integration</strong>: Flask is built on top of the Werkzeug WSGI toolkit and the Jinja2 template engine. Werkzeug provides low-level utilities for handling HTTP requests and responses, while Jinja2 provides a powerful and flexible templating engine for generating HTML and other text-based documents.</p></li>
+<li><p><strong>Development Server</strong>: Flask comes with a built-in development server, allowing developers to test their applications locally during development.</p></li>
+<li><p><strong>RESTful Request Dispatching</strong>: Flask supports RESTful request dispatching out of the box, making it easy to build RESTful APIs.</p></li>
+<li><p><strong>Built-in Development and Debugging Tools</strong>: Flask provides built-in development and debugging tools, including a built-in debugger and support for interactive debugging in the Python shell.</p></li>
+</ol>
+<p>Overall, <strong>Flask</strong> is a popular choice for web development in Python due to its simplicity, flexibility, and extensibility. It is widely used for building web applications, APIs, and microservices.</p>
+<p>Here you can find the tutorial of Jinja template: https://jinja.palletsprojects.com/en/3.1.x/templates/Links to an external site.</p>
+<p>Here you can find the tutorial of Flask: https://flask.palletsprojects.com/en/2.2.x/quickstart/Links to an external site.</p>
+<p>Ok now you have a basic idea of what Jinja and Flask are, you need to make sure that you have installed Flask in your environment. Jinja is one of the dependencies of Flask, and Flask installs it automatically when you install Flask using pip. Flask relies on Jinja for its templating engine, so it includes Jinja as part of its package.</p>
+<p>In terminal:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install Flask</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then run the following:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FLASK_ENV</span><span class="op">=</span>development</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Setting FLASK_ENV to development tells Flask to run the application in development mode. In development mode, Flask enables additional features and behaviors that are helpful during the development process.</p>
+<p>After this, create a file and name whatever you want and that is the place we are going to operate and everything happened inside this file.</p>
+</section>
+<section id="templates" class="level4">
+<h4 class="anchored" data-anchor-id="templates">2.1 templates</h4>
+<p>Create a file inside it and named it templates.</p>
+<p><code>templates directory</code>: This directory contains HTML templates that Jinja uses to render dynamic content. Templates typically include HTML markup along with Jinja template tags and expressions for inserting dynamic content, variables, control structures, and more. When you call render_template() in app.py, Flask looks for templates in the templates directory by default.</p>
+<p>Since our webpage would have 3 pages and each cooresponds to a html: - main page (main.html): the page that we see first - submit page (submit.html): the page that we can compose our messages and submit it - view page (view.html): the messages in the bank</p>
+<p>Now we are going to see it one-by-one.</p>
+<section id="base.html" class="level5">
+<h5 class="anchored" data-anchor-id="base.html">2.1.1 base.html</h5>
+<p><code>base.html</code> typically serves as the base or parent template in a Flask application’s template hierarchy. It contains the common structure, layout, and elements that are shared across multiple pages of a website or web application.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{{ url_for('static', filename='style.css') }}"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>{% block title %}{% endblock %} - Message Hub<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"container"</span><span class="dt">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"title"</span><span class="dt">&gt;</span>{% block header %}{% endblock %}<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"content"</span><span class="dt">&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    {% block content %}{% endblock %}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"nav-bar"</span><span class="dt">&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{{ url_for('main') }}"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"operation"</span><span class="dt">&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> class</span><span class="op">=</span><span class="st">"icon"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../static/home.svg"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span>Main page<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{{ url_for('view') }}"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"operation"</span><span class="dt">&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> class</span><span class="op">=</span><span class="st">"icon"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../static/message.svg"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span>Messages<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{{ url_for('submit') }}"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"operation"</span><span class="dt">&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> class</span><span class="op">=</span><span class="st">"icon"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../static/create.svg"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span>Compose<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The code block defines the basic structure of the website, which includes a title of <code>Message Hub</code> at the top, then there is a container that contains <code>title</code>, <code>content</code>, and a <code>nav-bar</code> that includes there buttons: <code>Main page</code>, <code>Message</code>, and <code>Compose</code>, where each button has a icon that is in the static folder, we will mention it later.</p>
+<ol type="1">
+<li><p><code>&lt;!DOCTYPE html&gt;</code>: This is a document type declaration that specifies the HTML version being used. It tells the web browser which version of HTML the document is written in.</p></li>
+<li><p><code>&lt;link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" /&gt;</code>: This line includes an external CSS stylesheet named <code>style.css</code> into the HTML document. The <code>url_for()</code> function is a Flask helper function that generates a URL for a given endpoint. Here, it generates the URL for the static file <code>style.css</code> located in the <code>static</code> directory of the Flask application.</p></li>
+<li><p><code>&lt;title&gt;{% block title %}{% endblock %} - Message Hub&lt;/title&gt;</code>: This line sets the title of the HTML document. The <code>{% block title %}{% endblock %}</code> part is a Jinja template block that serves as a placeholder for child templates to provide a title specific to each page. The <code>- Message Hub</code> text is a static part of the title that is common across all pages.</p></li>
+<li><p><code>&lt;div class="container"&gt;</code>: This line starts a container <code>div</code> element with the CSS class <code>container</code>. It’s used to wrap the content of the page and apply styling or layout rules.</p></li>
+<li><p><code>&lt;div class="title"&gt;{% block header %}{% endblock %}&lt;/div&gt;</code>: This line defines a <code>div</code> element with the CSS class <code>title</code>. The <code>{% block header %}{% endblock %}</code> part is a Jinja template block that serves as a placeholder for child templates to provide a header specific to each page.</p></li>
+<li><p><code>&lt;div class="nav-bar"&gt;...&lt;/div&gt;</code>: This line defines a <code>div</code> element with the CSS class <code>nav-bar</code>, which typically contains navigation links. Inside this <code>div</code>, there are anchor (<code>&lt;a&gt;</code>) elements representing navigation links to different pages of the website. The <code>href</code> attributes of these anchor elements use the <code>url_for()</code> function to generate URLs for the corresponding endpoints in the Flask application.</p></li>
+</ol>
+<p>Overall, this <code>base.html</code> template provides a common layout structure for HTML pages in the Flask application, with placeholders for dynamic content such as page titles, headers, and main content. Child templates can extend this base template and fill in the content blocks with specific content relevant to each page.</p>
+</section>
+<section id="main.html" class="level5">
+<h5 class="anchored" data-anchor-id="main.html">2.1.2 main.html</h5>
+<p>This would be the first page that you see when open the webpage. It would be like this: <img src="index_files/figure-html/cell-7-1-image-2.png" class="img-fluid" alt="image-2.png"></p>
+<p>The code looks like</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>{% extends 'base.html' %}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>{% block title %}Overview{% endblock %}</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>{% block header %}Message Hub{% endblock %}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"welcome-messages"</span><span class="dt">&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span>Welcome to Message Hub!<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span>At here, you can either comspanose a message by yourself or view messages in the hub. Hope you will enjoy it!<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s break down each part:</p>
+<ol type="1">
+<li><p><code>{% extends 'base.html' %}</code>: This line specifies that the current template extends the base template <code>base.html</code>. It means that the content of the current template will replace the corresponding blocks in the base template.</p></li>
+<li><p><code>{% block title %}Overview{% endblock %}</code>: This block overrides the <code>title</code> block defined in the base template. It sets the title of the HTML document to “Overview”. The content between <code>{% block title %}</code> and <code>{% endblock %}</code> will replace the corresponding block in the base template.</p></li>
+<li><p><code>{% block header %}Message Hub{% endblock %}</code>: This block overrides the <code>header</code> block defined in the base template. It sets the header of the page to “Message Hub”. Similar to the <code>title</code> block, the content between <code>{% block header %}</code> and <code>{% endblock %}</code> will replace the corresponding block in the base template.</p></li>
+<li><p><code>{% block content %}...{% endblock %}</code>: This block overrides the <code>content</code> block defined in the base template. It provides specific content for the main content area of the page. In this case, it contains a <code>&lt;div&gt;</code> element with the class <code>welcome-messages</code> and two paragraphs of text welcoming users to the Message Hub.</p></li>
+</ol>
+<p>By using the <code>extends</code> keyword and defining blocks within the child template, you can create modular and reusable templates in Flask applications.</p>
+</section>
+<section id="submit.html" class="level5">
+<h5 class="anchored" data-anchor-id="submit.html">2.1.3 submit.html</h5>
+<p>The submit page would contain 3 components: 1. A text box for submitting a message. 2. A text box for submitting the name of the user. 3. A “submit” button.</p>
+<p>The page looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-8-1-image.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<p>The code looks like this:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>{% extends 'base.html' %}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>{% block header %}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  {% block title %}New Message{% endblock %}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"/submit"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"post"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"form"</span><span class="dt">&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">'form-item form-item-name'</span><span class="dt">&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"name"</span><span class="dt">&gt;</span>Your Name or Handle:<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"name"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"name"</span><span class="ot"> required</span><span class="dt">&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">'form-item form-item-message'</span><span class="dt">&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"message"</span><span class="dt">&gt;</span>Your Message:<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">textarea</span><span class="ot"> id</span><span class="op">=</span><span class="st">"message"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"message"</span><span class="ot"> required</span><span class="dt">&gt;&lt;/</span><span class="kw">textarea</span><span class="dt">&gt;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="dt">&gt;</span>Submit Message<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">form</span><span class="dt">&gt;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  {% if thanks %}</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"success"</span><span class="dt">&gt;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>      Message Sent</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  {% endif %}</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s break down each part:</p>
+<ol type="1">
+<li><p><code>{% extends 'base.html' %}</code>: This line specifies that the current template extends the base template <code>base.html</code>. It means that the content of the current template will replace the corresponding blocks in the base template.</p></li>
+<li><p><code>{% block header %}...{% endblock %}</code>: This block overrides the <code>header</code> block defined in the base template. Inside this block, there is another block called <code>title</code>. This nested block defines the title of the HTML document to be “New Message”. The content between <code>{% block header %}</code> and <code>{% endblock %}</code> will replace the corresponding block in the base template.</p></li>
+<li><p><code>{% block content %}...{% endblock %}</code>: This block overrides the <code>content</code> block defined in the base template. It provides specific content for the main content area of the page. In this case, it contains an HTML form with input fields for the user’s name (or handle) and message, along with a submit button. Below the form, there is an <code>{% if thanks %}</code> condition, which checks if the <code>thanks</code> variable is set to true. If it is, a success message “Message Sent” is displayed and we are going to see this variable soon in the <code>app.py</code>.</p></li>
+</ol>
+</section>
+<section id="view.html" class="level5">
+<h5 class="anchored" data-anchor-id="view.html">2.1.4 view.html</h5>
+<p>This one would be easier since it only contains the messages we retrived from the data base.</p>
+<p>The page would looks like this: <img src="index_files/figure-html/cell-9-1-image.png" class="img-fluid" alt="image.png"></p>
+<p>The code looks like this:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>{% extends 'base.html' %}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>{% block header %}</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  {% block title %}Sinp of Messages{% endblock %}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"message-container"</span><span class="dt">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  {% for tuple in message_tuples%}</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"message"</span><span class="dt">&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"message-owner"</span><span class="dt">&gt;</span>{{tuple[0]}}<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"message-content"</span><span class="dt">&gt;</span>"{{tuple[1]}}"<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  {% endfor %}</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s break down each part:</p>
+<ol type="1">
+<li><p><code>{% extends 'base.html' %}</code>: This line specifies that the current template extends the base template <code>base.html</code>. It means that the content of the current template will replace the corresponding blocks in the base template, just like before.</p></li>
+<li><p><code>{% block header %}...{% endblock %}</code>: This block overrides the <code>header</code> block defined in the base template. Inside this block, there is another block called <code>title</code>. This nested block defines the title of the HTML document to be “Sinp of Messages”. The content between <code>{% block header %}</code> and <code>{% endblock %}</code> will replace the corresponding block in the base template.</p></li>
+<li><p><code>{% block content %}...{% endblock %}</code>: This block overrides the <code>content</code> block defined in the base template. It provides specific content for the main content area of the page. In this case, it contains a <code>&lt;div&gt;</code> element with the class <code>message-container</code>, which serves as a container for displaying messages.</p>
+<p>Inside the <code>message-container</code> div, there is a for loop that iterates over a list of <code>message_tuples</code>. For each tuple in the list, it generates a <code>&lt;div&gt;</code> element with the class <code>message</code>, containing two inner <code>&lt;div&gt;</code> elements:</p>
+<ul>
+<li><p><code>&lt;div class="message-owner"&gt;{{tuple[0]}}&lt;/div&gt;</code>: This div displays the owner of the message. It accesses the first element of the tuple using <code>{ tuple[0] }</code> Jinja syntax.</p></li>
+<li><p><code>&lt;div class="message-content"&gt;"{{tuple[1]}}"&lt;/div&gt;</code>: This div displays the content of the message. It accesses the second element of the tuple using <code>{ tuple[1] }</code> Jinja syntax. The content is enclosed in double quotes.</p></li>
+</ul></li>
+</ol>
+<p>We will see why we get the data this way once we know how the data were stored.</p>
+</section>
+</section>
+<section id="app.py" class="level4">
+<h4 class="anchored" data-anchor-id="app.py">2.2 app.py</h4>
+<p>This is the main Python script where you define your Flask application. In app.py, you define routes, configure the application, and handle requests. Jinja is used in conjunction with render_template() function calls in app.py to render HTML templates dynamically.</p>
+<p>First let’s import libraries we are going to use:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, g, render_template, request</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> redirect, url_for</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then creates a Flask application instance by:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here’s what it does:</p>
+<ol type="1">
+<li><p><strong>Creates an Application Instance</strong>: The <code>Flask()</code> constructor creates a new Flask application instance. This instance represents your web application and allows you to configure routes, define view functions, handle HTTP requests, and more.</p></li>
+<li><p><strong><code>__name__</code> Argument</strong>: The <code>__name__</code> argument is a special Python variable that represents the name of the current module. When you use <code>__name__</code> as an argument in the <code>Flask()</code> constructor, Flask uses it to determine the root path of the application’s resources, such as templates and static files. It’s important to note that <code>__name__</code> is different depending on whether the Python script is being run as the main program or imported as a module.</p></li>
+<li><p><strong>Assigns the Application Instance to <code>app</code></strong>: The resulting Flask application instance is assigned to the variable <code>app</code>, which you can then use throughout your Flask application to define routes, configure settings, and run the application.</p></li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">'/'</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render_template(<span class="st">'main.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In Flask, <code>@app.route('/')</code> is a decorator that is used to define a route for a specific URL.</p>
+<p>Here’s how it works:</p>
+<ul>
+<li><p><code>@app.route('/')</code>: This line decorates the following function, <code>main()</code>, indicating that the function should be executed when a request is made to the root URL <code>'/'</code>. The <code>@app.route()</code> decorator takes the URL pattern as its argument. In this case, <code>'/'</code> represents the root URL of the Flask application.</p></li>
+<li><p><code>def main():</code>: This is the definition of the <code>main()</code> function. This function is executed when a request is made to the root URL <code>'/'</code>.</p></li>
+<li><p><code>return render_template('main.html')</code>: Inside the <code>main()</code> function, <code>render_template()</code> is called with the argument <code>'main.html'</code>. This function renders the specified HTML template, <code>main.html</code>, and returns the resulting HTML content as the response to the client’s request.</p>
+<p><code>render_template()</code> is a function provided by Flask that renders HTML templates. It looks for the specified template file in the <code>templates</code> directory of the Flask application and processes any Jinja template tags or blocks contained within the template file.</p></li>
+</ul>
+<p>In summary, the code <code>@app.route('/')</code> decorates the <code>main()</code> function, specifying that it should be executed when a request is made to the root URL <code>'/'</code>. When this route is accessed, the <code>main()</code> function returns the contents of the <code>main.html</code> template to the client’s web browser.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">"/submit/"</span>, methods<span class="op">=</span>[<span class="st">'POST'</span>, <span class="st">'GET'</span>])</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> submit():</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'GET'</span>:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render_template(<span class="st">'submit.html'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        insert_message(request)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render_template(<span class="st">'submit.html'</span>, thanks <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This code is a Flask route definition for handling requests to the URL “/submit/” with both GET and POST methods.</p>
+<p>Here’s how it works:</p>
+<ul>
+<li><p><code>@app.route("/submit/", methods=['POST', 'GET'])</code>: This decorator defines a route for the URL “/submit/” and specifies that it should handle both GET and POST requests. The <code>methods</code> argument is a list containing the HTTP methods that this route should accept.</p></li>
+<li><p><code>def submit():</code>: This is the definition of the <code>submit()</code> function, which will be executed when a request is made to the “/submit/” URL.</p></li>
+<li><p><code>if request.method == 'GET':</code>: This conditional statement checks if the HTTP request method is GET. If it is, it means that the user is accessing the “/submit/” page via a GET request (e.g., by typing the URL into their browser’s address bar or following a link). In this case, the function returns the rendered template ‘submit.html’ using <code>render_template()</code>. This template likely contains a form that users can fill out to submit a message.</p></li>
+<li><p><code>else:</code>: If the request method is not GET, it means that it is a POST request (e.g., the user submitted the form). In this case, the function calls <code>insert_message(request)</code> to handle inserting the submitted message into the database. After inserting the message, it returns the rendered template ‘submit.html’ again, this time passing in an additional variable <code>thanks = True</code>. This variable is used to display a message on the page indicating that the message was successfully submitted.</p></li>
+</ul>
+<p>In summary, this route handler allows users to access the “/submit/” page via both GET and POST requests. If accessed via GET, it renders the ‘submit.html’ template containing a form. If accessed via POST (i.e., when the form is submitted), it inserts the submitted message into the database and renders the ‘submit.html’ template again, this time displaying a message indicating that the message was successfully submitted.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">"/view/"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> view(): </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    rdm_mesg <span class="op">=</span> random_messages(<span class="dv">5</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    length <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    message_tuples <span class="op">=</span> []</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(length):</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        message_tuples.append(<span class="bu">tuple</span>(rdm_mesg.iloc[i,:]))</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render_template(<span class="st">'view.html'</span>, message_tuples <span class="op">=</span> message_tuples)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This code defines a Flask route for handling requests to the URL “/view/”.</p>
+<p>Here’s how it works:</p>
+<ul>
+<li><p><code>@app.route("/view/")</code>: This decorator defines a route for the URL “/view/”. When a request is made to this URL, the associated function, <code>view()</code>, will be executed.</p></li>
+<li><p><code>def view():</code>: This is the definition of the <code>view()</code> function, which handles requests to the “/view/” URL.</p></li>
+<li><p><code>rdm_mesg = random_messages(5)</code>: This line calls a function <code>random_messages()</code> to retrieve a random selection of 5 messages. The exact implementation of <code>random_messages()</code> is not shown, but it presumably retrieves random messages from some data source.</p></li>
+<li><p><code>length = 5</code>: This line sets the variable <code>length</code> to 5, indicating the number of messages to retrieve.</p></li>
+<li><p><code>message_tuples = []</code>: This line initializes an empty list called <code>message_tuples</code>. This list will store tuples, where each tuple represents a message.</p></li>
+<li><p><code>for i in range(length):</code>: This line starts a loop that iterates <code>length</code> times. It iterates through the range of numbers from 0 to <code>length - 1</code>.</p></li>
+<li><p><code>message_tuples.append(tuple(rdm_mesg.iloc[i,:]))</code>: Inside the loop, this line retrieves a row from the <code>rdm_mesg</code> DataFrame (presumably containing the random messages) using <code>rdm_mesg.iloc[i,:]</code>, converts it to a tuple, and appends it to the <code>message_tuples</code> list.</p></li>
+<li><p><code>return render_template('view.html', message_tuples = message_tuples)</code>: Finally, this line renders the ‘view.html’ template using <code>render_template()</code>. It passes the <code>message_tuples</code> list as a variable named <code>message_tuples</code> to the template. This allows the template to access and display the messages retrieved in the view function.</p></li>
+</ul>
+<p>In summary, when a request is made to the “/view/” URL, the <code>view()</code> function retrieves a random selection of messages, converts them to tuples, and passes them to the ‘view.html’ template for rendering. The template can then display these messages to the user.</p>
+<p>As you might noticed, there are functions we need to write that appeared in front:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_message_db():</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># gets datbase from `g` object</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> g.message_db</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        g.message_db <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">"messages_db.sqlite"</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        cursor <span class="op">=</span> g.message_db.cursor()</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        cmd <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="st">        CREATE TABLE IF NOT EXISTS messages(</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="st">        handle TEXT,</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="st">        message TEXT</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="st">        );</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="st">        """</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        cursor.execute(cmd)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>        cursor.close()</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> g.message_db</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This Python function <code>get_message_db()</code> serves the purpose of managing the database connection for the Flask application.</p>
+<p>Here’s how it works:</p>
+<ol type="1">
+<li><p><strong>Try-Except Block</strong>: The function first attempts to retrieve the database connection from the <code>g</code> attribute of the Flask application context. The <code>g</code> object is a special object provided by Flask for storing global variables during the lifetime of a request. If the database connection is already present in <code>g</code>, it is returned immediately.</p>
+<p>If the database connection is not found in <code>g</code>, the <code>except</code> block is executed.</p></li>
+<li><p><strong>Database Connection</strong>: Inside the <code>except</code> block, a new SQLite database connection is established using <code>sqlite3.connect()</code>. The database file is specified as <code>"messages_db.sqlite"</code>. This creates a new SQLite database file if it doesn’t already exist.</p></li>
+<li><p><strong>Table Creation</strong>: After establishing the database connection, the function checks whether a table named “messages” exists in the database. If the table doesn’t exist, it creates it using the SQL command specified in the <code>cmd</code> variable. This command creates a table with two columns: <code>handle</code> and <code>message</code>, both of type <code>TEXT</code>.</p></li>
+<li><p><strong>Cursor Operation</strong>: The function creates a cursor using <code>g.message_db.cursor()</code> to execute SQL commands. It then executes the <code>CREATE TABLE</code> command to create the “messages” table if it doesn’t exist.</p></li>
+<li><p><strong>Closing Cursor</strong>: After executing the SQL command, the cursor is closed using <code>cursor.close()</code> to free up resources.</p></li>
+<li><p><strong>Returning Database Connection</strong>: Finally, the function returns the database connection stored in <code>g.message_db</code>. This ensures that subsequent calls to <code>get_message_db()</code> within the same Flask request context reuse the same database connection.</p></li>
+</ol>
+<p>In summary, <code>get_message_db()</code> ensures that a database connection is established, a “messages” table is created if it doesn’t exist, and returns the database connection for use in other parts of the Flask application.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> insert_message(request):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract the message and the handle from request</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    handle <span class="op">=</span> request.form[<span class="st">'name'</span>]</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    message <span class="op">=</span> request.form[<span class="st">'message'</span>]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Connect to the message database</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    db <span class="op">=</span> get_message_db()</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Insert message into the messages table</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> db.cursor()</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">"INSERT INTO messages (handle, message) VALUES (?, ?)"</span>, (handle, message))</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Commit changes to the database</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    db.commit()</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Close the database connection</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    db.close()</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the message and the handle</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> message, handle</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This Python function <code>insert_message(request)</code> is responsible for handling the insertion of a user message into the database of messages.</p>
+<p>Here’s a breakdown of how it works:</p>
+<ol type="1">
+<li><p><strong>Parameter Explanation</strong>: The docstring also explains that the function takes a <code>request</code> object as a parameter. This <code>request</code> object contains form data submitted by the user.</p></li>
+<li><p><strong>Extracting Message and Handle</strong>: The function extracts the message and handle from the <code>request</code> object using <code>request.form['name']</code> and <code>request.form['message']</code>, respectively. These values correspond to the form fields named “name” and “message” submitted by the user.</p></li>
+<li><p><strong>Database Connection</strong>: The function connects to the message database using the <code>get_message_db()</code> function. This function ensures that a database connection is established and returns the connection.</p></li>
+<li><p><strong>Inserting Message</strong>: The function creates a cursor using <code>db.cursor()</code> to execute SQL commands. It then executes an SQL <code>INSERT</code> statement to insert the message and handle into the “messages” table of the database. The <code>VALUES (?, ?)</code> part of the statement indicates that the values are provided as parameters, which helps prevent SQL injection attacks.</p></li>
+<li><p><strong>Committing Changes</strong>: After inserting the message into the database, the function commits the changes using <code>db.commit()</code>. This ensures that the changes are saved permanently in the database.</p></li>
+<li><p><strong>Closing Database Connection</strong>: Finally, the function closes the database connection using <code>db.close()</code>. Closing the connection frees up resources and prevents potential issues with concurrent access to the database.</p></li>
+<li><p><strong>Returning Message and Handle</strong>: The function returns a tuple containing the message and handle. This allows the caller to access these values if needed.</p></li>
+</ol>
+<p>In summary, <code>insert_message(request)</code> handles the insertion of user messages into the database by extracting the message and handle from the request, inserting them into the database, committing the changes, closing the database connection, and returning the message and handle.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> random_messages(n):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    db <span class="op">=</span> get_message_db()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    cmd <span class="op">=</span> <span class="ss">f""" SELECT * FROM messages ORDER BY RANDOM() LIMIT </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">; """</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    rdm_mesg <span class="op">=</span> pd.read_sql_query(cmd, db)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    db.close()</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rdm_mesg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This Python function <code>random_messages(n)</code> retrieves a random selection of messages from the database of messages.</p>
+<p>Here’s a breakdown of how it works:</p>
+<ol type="1">
+<li><p><strong>Database Connection</strong>: The function first connects to the message database using the <code>get_message_db()</code> function. This function ensures that a database connection is established and returns the connection.</p></li>
+<li><p><strong>SQL Command</strong>: The function constructs an SQL command to select a random sample of messages from the “messages” table. The <code>ORDER BY RANDOM()</code> clause ensures that the rows are returned in random order, and the <code>LIMIT {n}</code> clause limits the number of rows returned to <code>n</code>. The <code>f-string</code> syntax is used to include the value of <code>n</code> in the SQL command.</p></li>
+<li><p><strong>Executing SQL Command</strong>: The function executes the SQL command using <code>pd.read_sql_query()</code>, a function provided by the pandas library. This function executes the SQL query against the database connection (<code>db</code>) and returns the results as a pandas DataFrame (<code>rdm_mesg</code>).</p></li>
+<li><p><strong>Closing Database Connection</strong>: After retrieving the random messages, the function closes the database connection using <code>db.close()</code>. Closing the connection frees up resources and prevents potential issues with concurrent access to the database.</p></li>
+<li><p><strong>Returning Random Messages</strong>: Finally, the function returns the pandas DataFrame <code>rdm_mesg</code>, which contains the randomly selected messages.</p></li>
+</ol>
+<p>In summary, <code>random_messages(n)</code> retrieves a random selection of messages from the database by executing an SQL query, reading the results into a pandas DataFrame, and returning the DataFrame containing the random messages.</p>
+</section>
+<section id="static-style.css" class="level4">
+<h4 class="anchored" data-anchor-id="static-style.css">2.3 static (style.css)</h4>
+<p><code>static directory</code>: This directory contains static assets such as CSS, JavaScript, images, and other files that are served directly to clients without modification. While Jinja itself doesn’t directly interact with the static directory, Flask applications often use Jinja to generate URLs for static assets using the url_for() function. This allows you to reference static assets in your HTML templates in a way that’s flexible and consistent with your application’s routing.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>html {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#fff</span><span class="op">;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>body {</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">400</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.container</span> {</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">368</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">780</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">39</span><span class="dt">px</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">relative</span><span class="op">;</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-image</span><span class="ch">:</span> <span class="fu">url(</span><span class="st">./phone_background.png</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-size</span><span class="ch">:</span> <span class="dv">cover</span><span class="op">;</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* background-repeat: no-repeat; */</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* background-size: 400px 800pwx; */</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="fu">.title</span> {</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">368</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">54</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">36</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">align-items</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">justify-content</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#fff</span><span class="op">;</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#444444</span><span class="op">;</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a><span class="fu">.content</span> {</span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">54</span><span class="dt">px</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">580</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>  <span class="kw">overflow-y</span><span class="ch">:</span> <span class="dv">scroll</span><span class="op">;</span></span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a><span class="fu">.nav-bar</span> {</span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>  <span class="kw">bottom</span><span class="ch">:</span> <span class="dv">90</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">368</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">54</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#444444</span><span class="op">;</span></span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>  <span class="kw">justify-content</span><span class="ch">:</span> <span class="dv">space-between</span><span class="op">;</span></span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>  <span class="kw">align-items</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a><span class="fu">.operation</span> {</span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="fu">calc(</span><span class="dv">100</span><span class="dt">%</span> <span class="op">/</span> <span class="dv">3</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a>  <span class="kw">flex-direction</span><span class="ch">:</span> <span class="dv">column</span><span class="op">;</span></span>
+<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a>  <span class="kw">align-items</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>  <span class="kw">justify-content</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a><span class="fu">.operation</span><span class="in">:hover</span> {</span>
+<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#333</span><span class="op">;</span></span>
+<span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a>  <span class="kw">transition</span><span class="ch">:</span> <span class="dv">all</span> <span class="dv">0.3</span><span class="op">;</span></span>
+<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-68"><a href="#cb16-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-69"><a href="#cb16-69" aria-hidden="true" tabindex="-1"></a><span class="fu">.icon</span> {</span>
+<span id="cb16-70"><a href="#cb16-70" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#fff</span><span class="op">;</span></span>
+<span id="cb16-71"><a href="#cb16-71" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-72"><a href="#cb16-72" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-73"><a href="#cb16-73" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-74"><a href="#cb16-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-75"><a href="#cb16-75" aria-hidden="true" tabindex="-1"></a>a {</span>
+<span id="cb16-76"><a href="#cb16-76" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#fff</span><span class="op">;</span></span>
+<span id="cb16-77"><a href="#cb16-77" aria-hidden="true" tabindex="-1"></a>  <span class="kw">text-decoration</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb16-78"><a href="#cb16-78" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-79"><a href="#cb16-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-80"><a href="#cb16-80" aria-hidden="true" tabindex="-1"></a><span class="fu">.welcome-messages</span> {</span>
+<span id="cb16-81"><a href="#cb16-81" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb16-82"><a href="#cb16-82" aria-hidden="true" tabindex="-1"></a>  <span class="kw">flex-direction</span><span class="ch">:</span> <span class="dv">column</span><span class="op">;</span></span>
+<span id="cb16-83"><a href="#cb16-83" aria-hidden="true" tabindex="-1"></a>  <span class="kw">gap</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-84"><a href="#cb16-84" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-85"><a href="#cb16-85" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-86"><a href="#cb16-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-87"><a href="#cb16-87" aria-hidden="true" tabindex="-1"></a><span class="fu">.welcome-messages</span> <span class="op">&gt;</span> div<span class="in">:first-child</span> {</span>
+<span id="cb16-88"><a href="#cb16-88" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-89"><a href="#cb16-89" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-90"><a href="#cb16-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-91"><a href="#cb16-91" aria-hidden="true" tabindex="-1"></a><span class="fu">.welcome-messages</span> <span class="op">&gt;</span> div<span class="in">:last-child</span> {</span>
+<span id="cb16-92"><a href="#cb16-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.4</span><span class="op">;</span></span>
+<span id="cb16-93"><a href="#cb16-93" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-94"><a href="#cb16-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-95"><a href="#cb16-95" aria-hidden="true" tabindex="-1"></a><span class="fu">.form</span> {</span>
+<span id="cb16-96"><a href="#cb16-96" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb16-97"><a href="#cb16-97" aria-hidden="true" tabindex="-1"></a>  <span class="kw">flex-direction</span><span class="ch">:</span> <span class="dv">column</span><span class="op">;</span></span>
+<span id="cb16-98"><a href="#cb16-98" aria-hidden="true" tabindex="-1"></a>  <span class="kw">gap</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-99"><a href="#cb16-99" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-100"><a href="#cb16-100" aria-hidden="true" tabindex="-1"></a><span class="fu">.form-item</span> {</span>
+<span id="cb16-101"><a href="#cb16-101" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb16-102"><a href="#cb16-102" aria-hidden="true" tabindex="-1"></a>  <span class="kw">flex-direction</span><span class="ch">:</span> <span class="dv">column</span><span class="op">;</span></span>
+<span id="cb16-103"><a href="#cb16-103" aria-hidden="true" tabindex="-1"></a>  <span class="kw">gap</span><span class="ch">:</span> <span class="dv">12</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-104"><a href="#cb16-104" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-105"><a href="#cb16-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-106"><a href="#cb16-106" aria-hidden="true" tabindex="-1"></a>input {</span>
+<span id="cb16-107"><a href="#cb16-107" aria-hidden="true" tabindex="-1"></a>  <span class="kw">outline</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb16-108"><a href="#cb16-108" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-109"><a href="#cb16-109" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-110"><a href="#cb16-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-111"><a href="#cb16-111" aria-hidden="true" tabindex="-1"></a>textarea {</span>
+<span id="cb16-112"><a href="#cb16-112" aria-hidden="true" tabindex="-1"></a>  <span class="kw">outline</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb16-113"><a href="#cb16-113" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">120</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-114"><a href="#cb16-114" aria-hidden="true" tabindex="-1"></a>  <span class="kw">resize</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb16-115"><a href="#cb16-115" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-116"><a href="#cb16-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-117"><a href="#cb16-117" aria-hidden="true" tabindex="-1"></a>button {</span>
+<span id="cb16-118"><a href="#cb16-118" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-119"><a href="#cb16-119" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-120"><a href="#cb16-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-121"><a href="#cb16-121" aria-hidden="true" tabindex="-1"></a><span class="fu">.success</span> {</span>
+<span id="cb16-122"><a href="#cb16-122" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">22</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-123"><a href="#cb16-123" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">green</span><span class="op">;</span></span>
+<span id="cb16-124"><a href="#cb16-124" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-125"><a href="#cb16-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-126"><a href="#cb16-126" aria-hidden="true" tabindex="-1"></a><span class="fu">.message-container</span> {</span>
+<span id="cb16-127"><a href="#cb16-127" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb16-128"><a href="#cb16-128" aria-hidden="true" tabindex="-1"></a>  <span class="kw">flex-direction</span><span class="ch">:</span> <span class="dv">column</span><span class="op">;</span></span>
+<span id="cb16-129"><a href="#cb16-129" aria-hidden="true" tabindex="-1"></a>  <span class="kw">gap</span><span class="ch">:</span> <span class="dv">9</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-130"><a href="#cb16-130" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-131"><a href="#cb16-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-132"><a href="#cb16-132" aria-hidden="true" tabindex="-1"></a><span class="fu">.message</span> {</span>
+<span id="cb16-133"><a href="#cb16-133" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb16-134"><a href="#cb16-134" aria-hidden="true" tabindex="-1"></a>  <span class="kw">flex-direction</span><span class="ch">:</span> <span class="dv">column</span><span class="op">;</span></span>
+<span id="cb16-135"><a href="#cb16-135" aria-hidden="true" tabindex="-1"></a>  <span class="kw">gap</span><span class="ch">:</span> <span class="dv">9</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-136"><a href="#cb16-136" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-137"><a href="#cb16-137" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-bottom</span><span class="ch">:</span> <span class="cn">#eeeeee</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span><span class="op">;</span></span>
+<span id="cb16-138"><a href="#cb16-138" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-139"><a href="#cb16-139" aria-hidden="true" tabindex="-1"></a><span class="fu">.message</span><span class="in">:hover</span> {</span>
+<span id="cb16-140"><a href="#cb16-140" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-bottom</span><span class="ch">:</span> <span class="cn">#555555</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span><span class="op">;</span></span>
+<span id="cb16-141"><a href="#cb16-141" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-142"><a href="#cb16-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-143"><a href="#cb16-143" aria-hidden="true" tabindex="-1"></a><span class="fu">.message-owner</span> {</span>
+<span id="cb16-144"><a href="#cb16-144" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-145"><a href="#cb16-145" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#444444</span><span class="op">;</span></span>
+<span id="cb16-146"><a href="#cb16-146" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is a CSS stylesheet defining various styles for different elements of a web page. Here’s a breakdown of the styles defined:</p>
+<ol type="1">
+<li><p><code>html</code>: Sets the default font family to sans-serif and sets the background color to white.</p></li>
+<li><p><code>body</code>: Sets the maximum width of the body to 400px and centers it horizontally using auto margins.</p></li>
+<li><p><code>.container</code>: Styles a container element with a fixed width and height, positioned relative to its containing block. It sets a background image and ensures it covers the entire container.</p></li>
+<li><p><code>.title</code>: Styles a title element with a fixed width and height, positioned absolutely within its containing block. It centers the text vertically and horizontally, sets the font size, and applies colors.</p></li>
+<li><p><code>.content</code>: Styles a content area with padding, margin, height, and overflow properties. It ensures that content exceeding the height is scrollable.</p></li>
+<li><p><code>.nav-bar</code>: Styles a navigation bar with a fixed position at the bottom of its containing block. It sets the background color and arranges its child elements horizontally with space-between alignment.</p></li>
+<li><p><code>.operation</code>: Styles individual navigation bar items, including width, height, and alignment properties. It changes the background color on hover.</p></li>
+<li><p><code>.icon</code>: Styles icons within navigation bar items, setting the color, width, and height.</p></li>
+<li><p><code>a</code>: Styles anchor links, setting the color and removing the underline.</p></li>
+<li><p><code>.welcome-messages</code>: Styles a section containing welcome messages, arranging its child elements vertically with a gap between them.</p></li>
+<li><p><code>.form</code>: Styles a form element, arranging its child elements vertically with a gap between them.</p></li>
+<li><p><code>.form-item</code>: Styles form items, arranging their child elements vertically with a gap between them.</p></li>
+<li><p><code>input</code> and <code>textarea</code>: Styles form input and textarea elements, removing their outline and setting their height and other properties.</p></li>
+<li><p><code>button</code>: Styles buttons, setting their height.</p></li>
+<li><p><code>.success</code>: Styles a success message, setting its margin and color.</p></li>
+<li><p><code>.message-container</code>: Styles a container for messages, arranging its child elements vertically with a gap between them.</p></li>
+<li><p><code>.message</code>: Styles individual message elements, arranging their child elements vertically with a gap between them and adding a border.</p></li>
+<li><p><code>.message:hover</code>: Styles individual message elements on hover, changing the border color.</p></li>
+<li><p><code>.message-owner</code>: Styles message owner elements, setting the font size and color.</p></li>
+</ol>
+<p>Overall, these styles define the appearance and layout of various elements on a web page, providing consistency and visual appeal.</p>
+<p>Alright, we’ve completed all the tasks! Now you can get creative with your own message bank.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
