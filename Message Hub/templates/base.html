@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+<title>{% block title %}{% endblock %} - Message Hub</title>
+<div class="container">
+  <div class="title">{% block header %}{% endblock %}</div>
+  <div class="content">
+    {% block content %}{% endblock %}
+  </div>
+  <div class="nav-bar">
+    <a href="{{ url_for('main') }}" class="operation">
+      <img class="icon" src="../static/home.svg" />
+      <span>Main page</span>
+    </a>
+    <a href="{{ url_for('view') }}" class="operation">
+      <img class="icon" src="../static/message.svg" />
+      <span>Messages</span>
+    </a>
+    <a href="{{ url_for('submit') }}" class="operation">
+      <img class="icon" src="../static/create.svg" />
+      <span>Compose</span>
+    </a>
+  </div>
+</div>

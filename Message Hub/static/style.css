@@ -1,0 +1,147 @@
+html {
+  font-family: sans-serif;
+  background: #fff;
+}
+
+body {
+  max-width: 400px;
+  margin: auto;
+}
+
+.container {
+  width: 368px;
+  height: 780px;
+  padding: 39px 16px;
+  position: relative;
+  background-image: url(./phone_background.png);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  /* background-size: 400px 800pwx; */
+}
+
+.title {
+  width: 368px;
+  height: 54px;
+  position: absolute;
+  left: 16px;
+  top: 36px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #444444;
+}
+
+.content {
+  padding: 20px;
+  margin: 54px 0;
+  height: 580px;
+  overflow-y: scroll;
+}
+
+.nav-bar {
+  position: absolute;
+  left: 16px;
+  bottom: 90px;
+  width: 368px;
+  height: 54px;
+  background-color: #444444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.operation {
+  width: calc(100% / 3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.operation:hover {
+  background-color: #333;
+  transition: all 0.3;
+}
+
+.icon {
+  color: #fff;
+  width: 24px;
+  height: 24px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.welcome-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 16px;
+}
+
+.welcome-messages > div:first-child {
+  font-size: 24px;
+}
+
+.welcome-messages > div:last-child {
+  line-height: 1.4;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  outline: none;
+  height: 24px;
+}
+
+textarea {
+  outline: none;
+  height: 120px;
+  resize: none;
+}
+
+button {
+  height: 24px;
+}
+
+.success {
+  margin-top: 22px;
+  color: green;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-bottom: 18px;
+  border-bottom: #eeeeee 1px solid;
+}
+.message:hover {
+  border-bottom: #555555 1px solid;
+}
+
+.message-owner {
+  font-size: 24px;
+  color: #444444;
+}
+

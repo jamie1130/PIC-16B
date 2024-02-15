@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  {% block title %}Sinp of Messages{% endblock %}
+{% endblock %}
+
+{% block content %}
+<div class="message-container">
+  {% for tuple in message_tuples%}
+    <div class="message">
+      <div class="message-owner">{{tuple[0]}}</div>
+      <div class="message-content">"{{tuple[1]}}"</div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

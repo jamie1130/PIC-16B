@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  {% block title %}New Message{% endblock %}
+{% endblock %}
+
+{% block content %}
+  <form action="/submit" method="post" class="form">
+    <div class='form-item form-item-name'>
+      <label for="name">Your Name or Handle:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class='form-item form-item-message'>
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit">Submit Message</button>
+  </form>
+
+  {% if thanks %}
+    <div class="success">
+      Message Sent
+    </div>
+  {% endif %}
+
+{% endblock %}
