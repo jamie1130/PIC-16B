@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.541">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jamie">
+<meta name="dcterms.date" content="2024-03-04">
+
+<title>Jamie’s Blog - Doggie &amp; Catie Classification</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Jamie’s Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Doggie &amp; Catie Classification</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">HOMEWORK</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jamie </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 4, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Dog and Cat Images Classifications</p>
+<section id="table-of-contents" class="level2">
+<h2 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">1. Introduction</h3>
+</section>
+<section id="setup-and-data-exploration" class="level3">
+<h3 class="anchored" data-anchor-id="setup-and-data-exploration">2. Setup and Data Exploration</h3>
+</section>
+<section id="model1-keras.sequential" class="level3">
+<h3 class="anchored" data-anchor-id="model1-keras.sequential">3. Model1 (keras.Sequential)</h3>
+</section>
+<section id="model2-model1-data-augmentation" class="level3">
+<h3 class="anchored" data-anchor-id="model2-model1-data-augmentation">4. Model2 (Model1 + Data Augmentation)</h3>
+</section>
+<section id="model3-data-preprocessing-model2" class="level3">
+<h3 class="anchored" data-anchor-id="model3-data-preprocessing-model2">5. Model3 (Data Preprocessing + Model2)</h3>
+</section>
+<section id="model4-data-augmentation-transfer-learning" class="level3">
+<h3 class="anchored" data-anchor-id="model4-data-augmentation-transfer-learning">6. Model4 (Data Augmentation + Transfer Learning)</h3>
+</section>
+</section>
+<section id="introduction-1" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-1">1. Introduction</h2>
+<p>In this section, we are going to use TensorFlow as primiary tool.</p>
+<p>TensorFlow is a powerful tool for building and training machine learning models. It offers flexibility to work on different devices, scalability for large projects, and easy-to-use interfaces like Keras for beginners. With features like TensorBoard for visualization and a supportive community, TensorFlow is a popular choice for both learning and real-world applications.</p>
+<p>Another well-know tool is PyTorch, which is developed by Facebook’s AI Research lab. PyTorch is known for its dynamic computation graph, making it more flexible for experimentation and research. It has gained popularity for its intuitive interface and strong support for deep learning.</p>
+<p>The choice between PyTorch and TensorFlow often depends on factors such as project requirements, personal preferences, and familiarity with the frameworks. Here are some considerations for when to use each:</p>
+<p>Use PyTorch: 1. <strong>Dynamic Computation Graphs</strong>: If you prefer a dynamic computation graph where the graph structure can change for each iteration, PyTorch might be a better choice. This flexibility is useful for research and experimentation, especially in fields like natural language processing and reinforcement learning.</p>
+<ol start="2" type="1">
+<li><p><strong>Ease of Use</strong>: PyTorch is often praised for its simplicity and Pythonic syntax, making it more accessible for beginners and researchers who want to quickly prototype and experiment with different models.</p></li>
+<li><p><strong>Community and Ecosystem</strong>: While TensorFlow has a larger ecosystem due to its longer presence in the field, PyTorch has a rapidly growing community with strong support from both academia and industry. If you prefer a community that’s more focused on cutting-edge research and experimentation, PyTorch might be more suitable.</p></li>
+</ol>
+<p>Use TensorFlow: 1. <strong>Static Computation Graphs</strong>: If you require a static computation graph where the graph structure is defined before execution, TensorFlow’s static graph paradigm might be more suitable. This can offer performance optimizations and easier deployment in production environments.</p>
+<ol start="2" type="1">
+<li><p><strong>Scalability and Production Readiness</strong>: TensorFlow is well-suited for building and deploying large-scale production systems, thanks to its support for distributed computing, deployment options like TensorFlow Serving, and integration with tools like TensorFlow Extended (TFX) for end-to-end machine learning pipelines.</p></li>
+<li><p><strong>Wider Adoption and Support</strong>: TensorFlow has been around longer and has a larger user base, which means it has more resources, tutorials, and pre-trained models available. If you’re working on a project where existing resources and models are crucial, TensorFlow might be the better choice.</p></li>
+</ol>
+<p>Ultimately, both PyTorch and TensorFlow are powerful frameworks with their own strengths and weaknesses. It’s a good idea to experiment with both and choose the one that best fits your specific project requirements and preferences.</p>
+</section>
+<section id="setup-and-data-exploration-1" class="level2">
+<h2 class="anchored" data-anchor-id="setup-and-data-exploration-1">2. Setup and Data Exploration</h2>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">Setup</h3>
+<p>Import libraries</p>
+<div id="cell-7" class="cell" data-outputid="7d8e9626-ad90-4e4f-8ee1-48bf4810c32e" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install keras<span class="op">==</span><span class="fl">2.15.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Requirement already satisfied: keras==2.15.0 in /usr/local/lib/python3.10/dist-packages (2.15.0)</code></pre>
+</div>
+</div>
+<div id="cell-8" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"KERAS_BACKEND"</span>] <span class="op">=</span> <span class="st">"tensorflow"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> keras</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras <span class="im">import</span> datasets, layers, models</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The data we are going to use is <code>cats_vs_dogs</code> from tensorflow datasets, which is a commonly used dataset for binary image classification tasks. It contains images of cats and dogs, which are labeled accordingly 0 as cat 1 as dog.</p>
+<div id="cell-10" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras <span class="im">import</span> utils</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow_datasets <span class="im">as</span> tfds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we are going to load and split the “cats_vs_dogs” dataset using TensorFlow Datasets (TFDS) API into training, validation, and test sets.</p>
+<div id="cell-12" class="cell" data-outputid="e108f10e-abe3-4626-bc9e-95e78d70f935" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>train_ds, validation_ds, test_ds <span class="op">=</span> tfds.load(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cats_vs_dogs"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 40% for training, 10% for validation, and 10% for test (the rest unused)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    split<span class="op">=</span>[<span class="st">"train[:40%]"</span>, <span class="st">"train[40%:50%]"</span>, <span class="st">"train[50%:60%]"</span>],</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    as_supervised<span class="op">=</span><span class="va">True</span>,  <span class="co"># Include labels</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of training samples: </span><span class="sc">{</span>train_ds<span class="sc">.</span>cardinality()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of validation samples: </span><span class="sc">{</span>validation_ds<span class="sc">.</span>cardinality()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of test samples: </span><span class="sc">{</span>test_ds<span class="sc">.</span>cardinality()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Downloading and preparing dataset 786.67 MiB (download: 786.67 MiB, generated: 1.04 GiB, total: 1.81 GiB) to /root/tensorflow_datasets/cats_vs_dogs/4.0.1...
+Dataset cats_vs_dogs downloaded and prepared to /root/tensorflow_datasets/cats_vs_dogs/4.0.1. Subsequent calls will reuse this data.
+Number of training samples: 9305
+Number of validation samples: 2326
+Number of test samples: 2326</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major":2,"version_minor":0,"model_id":"136a30e6c224447780e8d0cf076af386","quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major":2,"version_minor":0,"model_id":"ea64c7b6f12445b2b0cc338d9155d31c","quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major":2,"version_minor":0,"model_id":"e726f9d6e99e4839bd974fd479dcdbe1","quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major":2,"version_minor":0,"model_id":"92d91ea589f14058a7d175fe977876ea","quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>WARNING:absl:1738 images were corrupted and were skipped</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major":2,"version_minor":0,"model_id":"52da5ecad50f4b158f20df440b24493a","quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
+<p>Let’s break down the code:</p>
+<p><strong>Loading the Dataset</strong>: - <code>tfds.load("cats_vs_dogs", ...)</code> : loads the “cats_vs_dogs” dataset using the TensorFlow Datasets (TFDS) API. The dataset is specified by its name.</p>
+<p><strong>Splitting the Dataset</strong>: - <code>split=["train[:40%]", "train[40%:50%]", "train[50%:60%]"]</code> : splits the dataset into three subsets: training, validation, and test sets. The percentages indicate the proportion of data allocated to each set. In this case, 40% of the data is allocated for training, 10% for validation, and 10% for testing.</p>
+<p><strong>Loading as Supervised</strong>: - <code>as_supervised=True</code> : This parameter indicates that the dataset should be loaded with labels. When set to <code>True</code>, the dataset will be returned as tuples <code>(image, label)</code> where <code>image</code> represents the input data (image) and <code>label</code> represents the corresponding label (cat or dog).</p>
+<p><strong>Printing Dataset Cardinalities</strong>: - <code>train_ds.cardinality()</code> : returns the number of elements in the training dataset. - <code>validation_ds.cardinality()</code> : returns the number of elements in the validation dataset. - <code>test_ds.cardinality()</code> : returns the number of elements in the test dataset.</p>
+<p>Overall, this code snippet loads the “cats_vs_dogs” dataset, splits it into training, validation, and test sets, and prints the number of samples in each set. This is a common practice in machine learning to ensure that the dataset is properly divided for training, validation, and evaluation purposes.</p>
+<p>The training dataset is used to teach the model, the validation dataset is used to fine-tune it, and the test dataset is used to evaluate its performance on unseen data. Splitting the dataset helps ensure the model learns effectively, generalizes well, and is properly evaluated.</p>
+<p>Now since the picture have difference sizes, we resize them to a fixed size of 150x150.</p>
+<div id="cell-15" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>resize_fn <span class="op">=</span> keras.layers.Resizing(<span class="dv">150</span>, <span class="dv">150</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> train_ds.<span class="bu">map</span>(<span class="kw">lambda</span> x, y: (resize_fn(x), y))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>validation_ds <span class="op">=</span> validation_ds.<span class="bu">map</span>(<span class="kw">lambda</span> x, y: (resize_fn(x), y))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>test_ds <span class="op">=</span> test_ds.<span class="bu">map</span>(<span class="kw">lambda</span> x, y: (resize_fn(x), y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s break it down:</p>
+<ol type="1">
+<li><p><code>resize_fn = keras.layers.Resizing(150, 150)</code> : creates a resizing layer using the <code>Resizing</code> class from the Keras API (a part of TensorFlow). The <code>Resizing</code> layer is configured to resize images to a target size of 150x150 pixels.</p></li>
+<li><p><code>train_ds.map(lambda x, y: (resize_fn(x), y))</code> : maps the resizing operation to each sample in the training dataset. The <code>map</code> function applies the provided lambda function to each element of the dataset. In this case, the lambda function resizes the input image <code>x</code> using the <code>resize_fn</code> layer and keeps the label <code>y</code> unchanged. This effectively resizes each image in the training dataset to the specified size.</p>
+<ul>
+<li>Similarly, the resizing operation is applied to each sample in the validation and test datasets using <code>validation_ds.map(lambda x, y: (resize_fn(x), y))</code> and <code>test_ds.map(lambda x, y: (resize_fn(x), y))</code>, respectively.</li>
+</ul></li>
+</ol>
+<p><strong>Purpose of Resizing</strong>: - Resizing the images to a uniform size (in this case, 150x150 pixels) is a common preprocessing step in computer vision tasks. It ensures that all images have the same dimensions, which is often required by machine learning models. This allows the model to process the images efficiently and ensures consistency during training. - Additionally, resizing can help reduce computational complexity and memory usage, especially when working with large datasets or when training deep learning models.</p>
+<div id="cell-17" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow <span class="im">import</span> data <span class="im">as</span> tf_data</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">64</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> train_ds.batch(batch_size).prefetch(tf_data.AUTOTUNE).cache()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>validation_ds <span class="op">=</span> validation_ds.batch(batch_size).prefetch(tf_data.AUTOTUNE).cache()</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>test_ds <span class="op">=</span> test_ds.batch(batch_size).prefetch(tf_data.AUTOTUNE).cache()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-18" class="cell" data-outputid="dc0b3607-d3f8-4314-d1b1-000fec11d3ee" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of train batches: </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> tf.data.experimental.cardinality(train_ds))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of validation batches: </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> tf.data.experimental.cardinality(validation_ds))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of test batches: </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> tf.data.experimental.cardinality(test_ds))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of train batches: 146
+Number of validation batches: 37
+Number of test batches: 37</code></pre>
+</div>
+</div>
+<p><strong>Batching</strong>: - <code>train_ds.batch(batch_size)</code> : This line batches the samples in the training dataset into groups or batches, where each batch contains <code>batch_size</code> number of samples, which is 64 in this case. Batching is a common technique used in machine learning to process multiple samples simultaneously, which can improve training efficiency. - Similarly, the validation and test datasets are also batched using <code>validation_ds.batch(batch_size)</code> and <code>test_ds.batch(batch_size)</code>, respectively.</p>
+<p><strong>Prefetching</strong>: - <code>prefetch(tf_data.AUTOTUNE)</code> : This line prefetches data from the dataset to improve performance. The <code>AUTOTUNE</code> parameter allows TensorFlow to automatically determine the optimal number of elements to prefetch dynamically based on available resources and the current workload. Prefetching overlaps data preprocessing and model execution, reducing the time spent waiting for data during training. - Prefetching is especially useful when working with large datasets or when using complex preprocessing pipelines.</p>
+<p><strong>Caching</strong>: - <code>cache()</code> : This line caches the elements of the dataset into memory or storage to improve data access speed. Caching allows TensorFlow to avoid reloading and preprocessing the data for each epoch during training, which can significantly speed up training, especially if the dataset fits into memory. - Caching the datasets can be particularly beneficial when working with smaller datasets or when the dataset preprocessing is computationally expensive.</p>
+<p>Lastly, we count on the number of batched in each dataset, which could be calculated by the number of data in the dataset divided by batch size.</p>
+</section>
+<section id="data-exploration" class="level3">
+<h3 class="anchored" data-anchor-id="data-exploration">Data Exploration</h3>
+<p>You can get a piece of a data set using the take method; e.g.&nbsp;train_ds.take(1) will retrieve one batch (32 images with labels) from the training data.</p>
+<p>Let’s briefly explore our data set. Write a function to create a two-row visualization. In the first row, show three random pictures of cats. In the second row, show three random pictures of dogs. You can see some related code in the linked tutorial above, although you’ll need to make some modifications in order to separate cats and dogs by rows. A docstring is not required.</p>
+<div id="cell-22" class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preview_plot(data_set):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">10</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Counter variables for dogs and cats</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    num_cats <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    num_dogs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    ds_shuffled <span class="op">=</span> data_set.shuffle(buffer_size<span class="op">=</span><span class="bu">len</span>(data_set))</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> images, labels <span class="kw">in</span> ds_shuffled.take(<span class="dv">1</span>):  <span class="co"># Iterate over the first batch</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>          <span class="cf">for</span> image, label <span class="kw">in</span> <span class="bu">zip</span>(images, labels):</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> label.numpy() <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> num_cats <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                    axes[<span class="dv">0</span>, num_cats].imshow(image.numpy() <span class="op">/</span> <span class="fl">255.0</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                    axes[<span class="dv">0</span>, num_cats].set_title(<span class="st">"Cat"</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>                    num_cats <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>                <span class="cf">elif</span> label.numpy() <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> num_dogs <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>                    axes[<span class="dv">1</span>, num_dogs].imshow(image.numpy() <span class="op">/</span> <span class="fl">255.0</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>                    axes[<span class="dv">1</span>, num_dogs].set_title(<span class="st">"Dog"</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>                    num_dogs <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>preview_plot</code> visualizes a subset of images from a dataset. In the first row, there are three random pictures of cats. In the second row shows three random pictures of dogs.</p>
+<p>Let’s break down the code:</p>
+<p><code>fig, axes = plt.subplots(2, 3, figsize=(15, 10))</code>: creates a figure and an array of subplots with a 2x3 grid layout (2 rows and 3 columns). Each subplot will display an image.</p>
+<p><code>num_cats = 0</code> and <code>num_dogs = 0</code>: These variables are used to count the number of displayed images for cats and dogs, respectively. The reason why we need these numbers is that we only need 3 data with label 0 and 3 data with label 1.</p>
+<p><code>ds_shuffled = data_set.shuffle(buffer_size=len(data_set))</code>: shuffles the dataset to ensure randomness in the displayed images. It uses the <code>shuffle</code> method of the dataset, specifying the buffer size as the length of the dataset.</p>
+<p><code>for images, labels in ds_shuffled.take(1):</code>: iterates over the first batch of the shuffled dataset. - <code>ds_shuffled.take(1)</code> extracts the first batch from the shuffled dataset. - Within the loop, each image and its corresponding label are processed: - <code>for image, label in zip(images, labels):</code> - <code>image.numpy() / 255.0</code> normalizes the image pixel values to the range [0, 1]. - If the label corresponds to a cat (<code>label.numpy() == 0</code>) and the number of displayed cat images (<code>num_cats</code>) is less than 3, the image is displayed in the upper row of subplots. - If the label corresponds to a dog (<code>label.numpy() == 1</code>) and the number of displayed dog images (<code>num_dogs</code>) is less than 3, the image is displayed in the lower row of subplots. - The titles of the subplots are set to “Cat” or “Dog” accordingly.</p>
+<p><code>plt.show()</code>: This line displays the plot containing the images.</p>
+<p>Overall, the <code>preview_plot</code> function visualizes a subset of images from the dataset, showing up to 3 cat images and 3 dog images in a 2x3 grid layout. This function is useful for quickly inspecting the content of the dataset and verifying that the images are correctly labeled.</p>
+<p>Now let’s see what it does.</p>
+<div id="cell-25" class="cell" data-outputid="570bf06a-3c91-4ed0-d611-5d047dbe01f6">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>preview_plot(data_set <span class="op">=</span> validation_ds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The following line of code will create an iterator called labels_iterator, that is used to extract labels from the training dataset.</p>
+<div id="cell-27" class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>labels_iterator<span class="op">=</span> train_ds.unbatch().<span class="bu">map</span>(<span class="kw">lambda</span> image, label: label).as_numpy_iterator()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>unbatch()</code>: unrolls the batches in the dataset, converting it from a batched dataset into a dataset of individual samples.</p>
+<p><code>map(lambda image, label: label)</code>: This <code>map</code> operation applies a function to each element of the dataset. In this case, it’s a lambda function that extracts the label from each sample in the dataset.</p>
+<p><code>as_numpy_iterator()</code>:converts the dataset into an iterator that yields elements as NumPy arrays. In this case, it returns an iterator containing only the labels as NumPy arrays.</p>
+<p>Now let’s Compute the number of images in the training data with label 0 (corresponding to “cat”) and label 1 (corresponding to “dog”).</p>
+<div id="cell-30" class="cell" data-outputid="35771b32-b10b-4f31-cbe8-e82a6d057275">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> collections</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert labels_iterator to a list</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>labels_list <span class="op">=</span> <span class="bu">list</span>(labels_iterator)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the frequency of each label</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>label_counts <span class="op">=</span> collections.Counter(labels_list)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(label_counts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Counter({1: 4668, 0: 4637})</code></pre>
+</div>
+</div>
+<p><code>collections</code> module provides specialized container datatypes in Python, including the <code>Counter</code> class.</p>
+<p><code>labels_list = list(labels_iterator)</code>:converts the <code>labels_iterator</code> into a list. The <code>labels_iterator</code> contains all the labels extracted from the dataset using the pipeline described earlier.</p>
+<p><code>label_counts = collections.Counter(labels_list)</code>: This line creates a <code>Counter</code> object called <code>label_counts</code> by passing the <code>labels_list</code> to the <code>Counter</code> class constructor. The <code>Counter</code> object counts the frequency of each unique label in the list.</p>
+<p>The result of Counter({1: 4668, 0: 4637}) shows that number of cats and dog are near balance, which is good since the model would not be biased toward either result. Moreover, The baseline machine learning model is the model that always guesses the most frequent label. Since the frequency is almost the same, the accuracy of the baseline model would be super low as it will tend to identify any picture as dog since label 1 tends to have a higher frequency.</p>
+<p>We’ll treat this as the benchmark for improvement. Our models should do much better than baseline in order to be considered good data science achievements!</p>
+</section>
+</section>
+<section id="model1-keras.sequential-1" class="level2">
+<h2 class="anchored" data-anchor-id="model1-keras.sequential-1">3. Model1 (keras.Sequential)</h2>
+<p>Our first model would be the one that use keras.Sequential, which could contain several layers.</p>
+<div id="cell-35" class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the model</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>model1 <span class="op">=</span> models.Sequential([</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convolutional layers</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">32</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>, input_shape<span class="op">=</span>(<span class="dv">150</span>, <span class="dv">150</span>, <span class="dv">3</span>)),</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">64</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Flatten layer</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    layers.Flatten(),</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Dense layers</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">128</span>, activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Dropout layer</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    layers.Dropout(<span class="fl">0.5</span>),</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Output layer</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">2</span>, activation<span class="op">=</span><span class="st">'softmax'</span>)</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We defined a convolutional neural network (CNN) model using TensorFlow’s Keras API.</p>
+<p>A couple things you might want to know before we proceed: An activation function is a mathematical operation applied to the output of each neuron (or unit) in a neural network layer. It introduces non-linearity to the network, enabling it to learn complex patterns and relationships in the data. Activation functions determine whether a neuron should be activated (produce an output) or not, based on the weighted sum of its inputs.</p>
+<p>There are several types of activation functions commonly used in neural networks. Some of the popular ones include:</p>
+<ol type="1">
+<li><p><strong>ReLU (Rectified Linear Unit)</strong>: ReLU is one of the most commonly used activation functions. It outputs the input directly if it is positive, and zero otherwise. Mathematically, it can be expressed as: <span class="math display">\[f(x) = \max(0, x)\]</span> ReLU helps alleviate the vanishing gradient problem and accelerates convergence in training deep neural networks.</p></li>
+<li><p><strong>Sigmoid</strong>: Sigmoid function squashes the input values to the range of [0, 1]. It is often used in binary classification tasks where the output needs to be interpreted as probabilities. The mathematical expression for the sigmoid function is: <span class="math display">\[f(x) = \frac{1}{1 + e^{-x}}\]</span></p></li>
+<li><p><strong>Tanh (Hyperbolic Tangent)</strong>: Tanh function squashes the input values to the range of [-1, 1]. It is similar to the sigmoid function but centered at zero. Tanh is commonly used in hidden layers of neural networks. The mathematical expression for the tanh function is: <span class="math display">\[f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\]</span></p></li>
+<li><p><strong>Softmax</strong>: Softmax function is used in the output layer of multi-class classification tasks. It normalizes the output values into a probability distribution over multiple classes, ensuring that the sum of the probabilities is equal to 1. Softmax is often used to interpret the output of the neural network as class probabilities. The mathematical expression for the softmax function is: <span class="math display">\[f(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{K} e^{x_j}}\]</span> where K is the number of classes.</p></li>
+</ol>
+<p>Choosing an appropriate activation function is crucial for training neural networks effectively, as it directly impacts the network’s ability to learn and generalize from the data. Different activation functions may be more suitable for different types of tasks and network architectures.</p>
+<p>Let’s break down the model architecture and the purpose of each layer used:</p>
+<ol type="1">
+<li><strong>Sequential Model</strong>:
+<ul>
+<li><code>models.Sequential([...])</code>: This initializes a sequential model, where layers are added sequentially one after the other.</li>
+</ul></li>
+<li><strong>Convolutional Layers</strong>:
+<ul>
+<li><code>layers.Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3))</code>: This adds a 2D convolutional layer with 32 filters, each with a kernel size of (3, 3). The activation function used is ReLU (Rectified Linear Unit). The <code>input_shape</code> parameter specifies the shape of the input data, which is a 3D tensor representing an image with dimensions (height=150, width=150, channels=3) for RGB images.</li>
+<li><code>layers.MaxPooling2D((2, 2))</code>: This adds a max-pooling layer with a pool size of (2, 2) to downsample the spatial dimensions of the feature maps obtained from the convolutional layers. It helps reduce computational complexity and control overfitting by retaining important features.</li>
+</ul></li>
+<li><strong>Flatten Layer</strong>:
+<ul>
+<li><code>layers.Flatten()</code>: This layer flattens the output from the convolutional layers into a 1D array. It prepares the data for input into the subsequent fully connected (dense) layers.</li>
+</ul></li>
+<li><strong>Dense Layers</strong>:
+<ul>
+<li><code>layers.Dense(128, activation='relu')</code>: This adds a fully connected (dense) layer with 128 neurons and ReLU activation function. This layer learns complex patterns from the flattened input data.</li>
+</ul></li>
+<li><strong>Dropout Layer</strong>:
+<ul>
+<li><code>layers.Dropout(0.5)</code>: This dropout layer randomly drops a fraction of the neurons (50% in this case) during training to prevent overfitting. It helps improve the generalization of the model by forcing it to learn redundant representations.</li>
+</ul></li>
+<li><strong>Output Layer</strong>:
+<ul>
+<li><code>layers.Dense(2, activation='softmax')</code>: This adds the output layer with 2 neurons, corresponding to the two classes (cats and dogs) in the classification task. The activation function used is softmax, which converts the raw scores into probabilities, indicating the likelihood of each class.</li>
+</ul></li>
+</ol>
+<p>Overall, this model consists of convolutional layers for feature extraction, followed by dense layers for learning high-level representations, dropout for regularization, and an output layer for prediction. It is a typical CNN architecture for image classification tasks.</p>
+<div id="cell-38" class="cell" data-outputid="6cdf7292-cf7d-4e40-ac28-cc26f0ae6c52">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compile the model</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>model1.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">'adam'</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>              loss<span class="op">=</span><span class="st">'sparse_categorical_crossentropy'</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>              metrics<span class="op">=</span>[<span class="st">'accuracy'</span>])</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the model summary</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>model1.summary()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 148, 148, 32)      896       
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 74, 74, 32)        0         
+ D)                                                              
+                                                                 
+ conv2d_1 (Conv2D)           (None, 72, 72, 64)        18496     
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 36, 36, 64)        0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 82944)             0         
+                                                                 
+ dense (Dense)               (None, 128)               10616960  
+                                                                 
+ dropout (Dropout)           (None, 128)               0         
+                                                                 
+ dense_1 (Dense)             (None, 2)                 258       
+                                                                 
+=================================================================
+Total params: 10636610 (40.58 MB)
+Trainable params: 10636610 (40.58 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________</code></pre>
+</div>
+</div>
+<ol type="1">
+<li><strong>Compiling the Model</strong>:
+<ul>
+<li><code>model1.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])</code>: This line compiles the neural network model. During compilation, you specify three key components:
+<ul>
+<li><code>optimizer</code>: The optimization algorithm used to update the model’s weights during training. In this case, the Adam optimizer is used, which is a popular choice for gradient-based optimization.</li>
+<li><code>loss</code>: The loss function used to measure the difference between the predicted outputs and the true labels. Here, ‘sparse_categorical_crossentropy’ is used, which is suitable for multi-class classification problems where the labels are integers.</li>
+<li><code>metrics</code>: A list of metrics used to evaluate the performance of the model during training and testing. In this case, ‘accuracy’ is chosen as the metric, which calculates the proportion of correctly classified samples.</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>There are various optimizers, loss functions, and evaluation metrics available in TensorFlow’s Keras API, each suited for different types of tasks and model architectures. Here’s an overview of some common choices and their typical use cases:</p>
+<p><strong>Optimizers</strong>: - <strong>Adam</strong>: Adam is a popular adaptive learning rate optimization algorithm that combines the advantages of AdaGrad and RMSProp. It is well-suited for most deep learning tasks and is often a good default choice. - <strong>SGD (Stochastic Gradient Descent)</strong>: SGD is the classic optimization algorithm used in training neural networks. While it’s simple and easy to implement, it may require careful tuning of the learning rate and momentum parameters. - <strong>RMSprop</strong>: RMSprop is another adaptive learning rate optimization algorithm that adjusts the learning rate based on the moving average of squared gradients. It is particularly effective for recurrent neural networks (RNNs) and other sequential models. - <strong>Adagrad</strong>: Adagrad adapts the learning rate based on the frequency of updates for each parameter. It is well-suited for sparse data and tasks with features that occur infrequently.</p>
+<p><strong>Loss Functions</strong>: - <strong>Mean Squared Error (MSE)</strong>: MSE is commonly used for regression tasks, where the model predicts continuous values. It measures the average squared difference between the predicted and true values. - <strong>Binary Crossentropy</strong>: Binary crossentropy is used for binary classification tasks, where the model predicts probabilities for two classes. It measures the difference between the predicted and true class labels. - <strong>Categorical Crossentropy</strong>: Categorical crossentropy is used for multi-class classification tasks, where the model predicts probabilities for multiple classes. It is suitable when the labels are one-hot encoded. - <strong>Sparse Categorical Crossentropy</strong>: Sparse categorical crossentropy is similar to categorical crossentropy but is used when the labels are integers instead of one-hot encoded vectors. It is suitable for multi-class classification tasks where the class labels are integers.</p>
+<p><strong>Metrics</strong>: - <strong>Accuracy</strong>: Accuracy measures the proportion of correctly classified samples. It is a common metric for classification tasks but may not be suitable for imbalanced datasets. - <strong>Precision, Recall, F1-score</strong>: These metrics provide insights into the performance of the model, especially in scenarios with imbalanced classes. Precision measures the proportion of true positive predictions among all positive predictions, recall measures the proportion of true positive predictions among all actual positives, and F1-score is the harmonic mean of precision and recall. - <strong>Mean Squared Error (MSE)</strong>: MSE can also be used as a metric for regression tasks to evaluate the average squared difference between predicted and true values.</p>
+<p>The choice of optimizer, loss function, and metrics depends on the specific characteristics of the dataset, task requirements, and the architecture of the model. Experimentation and tuning may be necessary to find the most suitable combination for your particular problem.</p>
+<ol start="2" type="1">
+<li><code>model1.summary()</code>: This line displays a summary of the model architecture, including the layers, output shapes, and total number of parameters. The summary provides useful information for understanding the structure of the model, such as the number of trainable parameters and the flow of data through the network.</li>
+</ol>
+<p>Overall, after compiling the model with the specified optimizer, loss function, and metrics, calling <code>model1.summary()</code> provides a concise overview of the model’s architecture, helping you understand its structure and ensure it is configured correctly for training.</p>
+<div id="cell-40" class="cell" data-outputid="f11da309-4e5e-41d1-a294-b270d5924949">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the model</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> model1.fit(train_ds,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                    epochs<span class="op">=</span><span class="dv">20</span>,  <span class="co"># Adjust number of epochs as needed</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                    validation_data<span class="op">=</span>validation_ds)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model on the test dataset</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>test_loss, test_accuracy <span class="op">=</span> model1.evaluate(test_ds)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Test Accuracy:"</span>, test_accuracy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Epoch 1/20
+146/146 [==============================] - 14s 53ms/step - loss: 27.4379 - accuracy: 0.5378 - val_loss: 0.6796 - val_accuracy: 0.5421
+Epoch 2/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.6351 - accuracy: 0.6216 - val_loss: 0.6892 - val_accuracy: 0.5615
+Epoch 3/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.5402 - accuracy: 0.7032 - val_loss: 0.7278 - val_accuracy: 0.5911
+Epoch 4/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.4463 - accuracy: 0.7845 - val_loss: 0.7997 - val_accuracy: 0.5903
+Epoch 5/20
+146/146 [==============================] - 5s 37ms/step - loss: 0.3611 - accuracy: 0.8352 - val_loss: 0.9493 - val_accuracy: 0.5954
+Epoch 6/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.3543 - accuracy: 0.8400 - val_loss: 0.9521 - val_accuracy: 0.5890
+Epoch 7/20
+146/146 [==============================] - 5s 33ms/step - loss: 0.2833 - accuracy: 0.8786 - val_loss: 1.0162 - val_accuracy: 0.5942
+Epoch 8/20
+146/146 [==============================] - 5s 33ms/step - loss: 0.2558 - accuracy: 0.8933 - val_loss: 1.0801 - val_accuracy: 0.5817
+Epoch 9/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.2169 - accuracy: 0.9132 - val_loss: 1.2342 - val_accuracy: 0.5911
+Epoch 10/20
+146/146 [==============================] - 5s 33ms/step - loss: 0.1917 - accuracy: 0.9268 - val_loss: 1.2070 - val_accuracy: 0.5903
+Epoch 11/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.1784 - accuracy: 0.9305 - val_loss: 1.3432 - val_accuracy: 0.5877
+Epoch 12/20
+146/146 [==============================] - 5s 33ms/step - loss: 0.1714 - accuracy: 0.9330 - val_loss: 1.2284 - val_accuracy: 0.5890
+Epoch 13/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.1155 - accuracy: 0.9584 - val_loss: 1.4662 - val_accuracy: 0.6079
+Epoch 14/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.1324 - accuracy: 0.9544 - val_loss: 1.4332 - val_accuracy: 0.6096
+Epoch 15/20
+146/146 [==============================] - 6s 43ms/step - loss: 0.1323 - accuracy: 0.9558 - val_loss: 1.4723 - val_accuracy: 0.6062
+Epoch 16/20
+146/146 [==============================] - 6s 41ms/step - loss: 0.1051 - accuracy: 0.9646 - val_loss: 1.4721 - val_accuracy: 0.5959
+Epoch 17/20
+146/146 [==============================] - 5s 33ms/step - loss: 0.0917 - accuracy: 0.9674 - val_loss: 1.5394 - val_accuracy: 0.6028
+Epoch 18/20
+146/146 [==============================] - 5s 33ms/step - loss: 0.1036 - accuracy: 0.9675 - val_loss: 1.6018 - val_accuracy: 0.6075
+Epoch 19/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.0923 - accuracy: 0.9703 - val_loss: 1.6863 - val_accuracy: 0.6105
+Epoch 20/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.0912 - accuracy: 0.9702 - val_loss: 2.1597 - val_accuracy: 0.6156
+37/37 [==============================] - 3s 71ms/step - loss: 2.0807 - accuracy: 0.6113
+Test Accuracy: 0.6113499402999878</code></pre>
+</div>
+</div>
+<p>This code snippet is responsible for training and evaluating a neural network model using TensorFlow’s Keras API. Let’s break it down:</p>
+<ol type="1">
+<li><strong>Training the Model</strong>:
+<ul>
+<li><code>history = model1.fit(train_ds, epochs=20, validation_data=validation_ds)</code>: This line trains the neural network model (<code>model1</code>) using the <code>fit</code> method. It takes the following arguments:
+<ul>
+<li><code>train_ds</code>: The training dataset containing input samples and their corresponding labels.</li>
+<li><code>epochs</code>: The number of training epochs, i.e., the number of times the entire dataset is passed forward and backward through the network for training. In this case, the model is trained for 20 epochs.</li>
+<li><code>validation_data</code>: Optional validation data to be used during training. Here, <code>validation_ds</code> is provided, which contains validation samples and their labels. During training, the model’s performance on this data will be evaluated after each epoch.</li>
+</ul></li>
+<li>The <code>fit</code> method returns a <code>history</code> object, which contains information about the training process, such as training/validation loss and metrics over epochs. This object can be used for visualization and analysis.</li>
+</ul></li>
+<li><strong>Evaluating the Model on the Test Dataset</strong>:
+<ul>
+<li><code>test_loss, test_accuracy = model1.evaluate(test_ds)</code>: This line evaluates the trained model on the test dataset (<code>test_ds</code>) using the <code>evaluate</code> method. It computes the loss and metrics (accuracy, in this case) of the model on the test data.</li>
+<li>The <code>evaluate</code> method returns the test loss and test accuracy, which are assigned to the variables <code>test_loss</code> and <code>test_accuracy</code>, respectively.</li>
+</ul></li>
+<li><strong>Printing Test Accuracy</strong>:
+<ul>
+<li><code>print("Test Accuracy:", test_accuracy)</code>: This line prints the test accuracy of the model obtained from evaluating it on the test dataset.</li>
+</ul></li>
+</ol>
+<div id="cell-42" class="cell" data-outputid="eb64b3f8-8244-48c2-e49c-3c78b375c81d">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"accuracy"</span>], label <span class="op">=</span> <span class="st">"training"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"val_accuracy"</span>], label <span class="op">=</span> <span class="st">"validation"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"epoch"</span>, ylabel <span class="op">=</span> <span class="st">"accuracy"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>I tried to change the number of filters and neurons for example 32 into 64 filters, 64 neurons, and find out that less filters and neurons would make the model perform worse a little bit but substantially faster since it is a simpler model. You can try to add more layers or alternate the numbers or the functions on your own a few times!</p>
+<p>The above model has an accuracy of <strong>0.5</strong> on both train and <strong>validation dataset at the begining</strong>, and achieved an accuracy of 0.9702 on train data and <strong>0.6156 on validation data</strong>, which improves at the end. We also get accuracy of 0.6113 on the test data, which aligh well with the validation data test result.</p>
+<p>Compare to the baseline model, we only improved for about 10%. Plus, overfitting can be observed in this model since the training accuracy is much higher than the validation accuracy.</p>
+</section>
+<section id="model2-model1-data-augmentation-1" class="level2">
+<h2 class="anchored" data-anchor-id="model2-model1-data-augmentation-1">4. Model2 (Model1 + Data Augmentation)</h2>
+<p>Now we’re going to add some data augmentation layers to the model.</p>
+<p>Data augmentation involves applying various transformations to the training images, such as rotation, flipping, scaling, cropping, or shifting, to create modified versions of the original images. These transformations produce new training samples that are similar to the original ones but have slight variations. For example, flipping an image horizontally does not change its content fundamentally; it’s still the same object, just seen from a different perspective.</p>
+<p>The goal of data augmentation is to increase the diversity and robustness of the training data, helping the model to generalize better to unseen variations of the input data. By exposing the model to a wider range of variations during training, data augmentation encourages the model to learn more invariant features that are useful for making accurate predictions. In other words, the model learns to focus on the essential characteristics of the images, regardless of their orientation, position, or other minor variations.</p>
+<p>First we are going to create a keras.layers.RandomFlip() layer and make a plot of the original image and a few copies to which RandomFlip() has been applied.</p>
+<div id="cell-47" class="cell" data-outputid="643ccd30-7e69-4f52-b470-d686f93dde40" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> RandomFlip</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function to plot images</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_images(images, title):</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(images)):</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">1</span>, <span class="bu">len</span>(images), i <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        plt.imshow(images[i] <span class="op">/</span> <span class="fl">255.0</span>)  <span class="co"># Normalize pixel values to [0, 1]</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="ss">f'</span><span class="sc">{</span>title<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>i <span class="op">+</span> <span class="dv">1</span><span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a sample image from the dataset (assuming train_ds contains images)</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>sample_image <span class="op">=</span> <span class="bu">next</span>(<span class="bu">iter</span>(train_ds))[<span class="dv">0</span>][<span class="dv">0</span>].numpy()</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a RandomFlip layer</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>flip_layer <span class="op">=</span> RandomFlip(mode<span class="op">=</span><span class="st">'horizontal'</span>)</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply RandomFlip to the original image to generate augmented images</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>augmented_images <span class="op">=</span> [flip_layer(tf.expand_dims(sample_image, axis<span class="op">=</span><span class="dv">0</span>)) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert augmented images to numpy arrays</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>augmented_images <span class="op">=</span> [image.numpy()[<span class="dv">0</span>] <span class="cf">for</span> image <span class="kw">in</span> augmented_images]</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the original image and augmented images</span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>plot_images([sample_image] <span class="op">+</span> augmented_images, <span class="st">'Image'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As you can see Image 1 as the original image, and Image3 and 6 are flipped horizonally.</p>
+<p>Next, we are going to create a keras.layers.RandomRotation() layer. Then, make a plot of both the original image and a few copies to which RandomRotation() has been applied.</p>
+<div id="cell-50" class="cell" data-outputid="997361a8-87c5-4118-fd7a-efe729b0c65d" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> RandomRotation</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a RandomRotation layer</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>rotation_layer <span class="op">=</span> RandomRotation(factor<span class="op">=</span><span class="fl">0.2</span>)  <span class="co"># You can adjust the rotation factor as needed</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply RandomRotation to the original image to generate augmented images</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>augmented_images <span class="op">=</span> [rotation_layer(tf.expand_dims(sample_image, axis<span class="op">=</span><span class="dv">0</span>)) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert augmented images to numpy arrays</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>augmented_images <span class="op">=</span> [image.numpy()[<span class="dv">0</span>] <span class="cf">for</span> image <span class="kw">in</span> augmented_images]</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the original image and augmented images</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>plot_images([sample_image] <span class="op">+</span> augmented_images, <span class="st">'Image'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Setting factor = 0.2 means that the layer will randomly rotate the input images by a maximum angle of 0.2 radians in both clockwise and counterclockwise directions.</p>
+<p>As you can see Image 1 as the original image, and others are rotated.</p>
+<p>We would see the power of two layer in the plot showed below.</p>
+<div id="cell-53" class="cell" data-outputid="234844b9-12ee-403b-f11b-f4962e34e2f6">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>data_augmentation <span class="op">=</span> tf.keras.Sequential([</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  tf.keras.layers.RandomFlip(<span class="st">'horizontal'</span>),</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  tf.keras.layers.RandomRotation(<span class="fl">0.2</span>),</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> image, _ <span class="kw">in</span> train_ds.take(<span class="dv">1</span>):</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    first_image <span class="op">=</span> image[<span class="dv">0</span>]</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">9</span>):</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>        ax <span class="op">=</span> plt.subplot(<span class="dv">3</span>, <span class="dv">3</span>, i <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>        augmented_image <span class="op">=</span> data_augmentation(tf.expand_dims(first_image, <span class="dv">0</span>))</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>        plt.imshow(augmented_image[<span class="dv">0</span>] <span class="op">/</span> <span class="dv">255</span>)</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">'off'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, we create a new keras.models.Sequential model called model2 in which the first two layers are augmentation layers. Use a RandomFlip() layer and a RandomRotation() layer.</p>
+<div id="cell-55" class="cell" data-outputid="2f37ed6c-1fc2-467f-e747-2e883a7c0c88">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras <span class="im">import</span> optimizers</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>model2 <span class="op">=</span> models.Sequential([</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    data_augmentation,</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">32</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>, input_shape<span class="op">=</span>(<span class="dv">150</span>, <span class="dv">150</span>, <span class="dv">3</span>)),</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    layers.BatchNormalization(),</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">64</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    layers.BatchNormalization(),</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">128</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    layers.BatchNormalization(),</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    layers.Flatten(),</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">256</span>, activation<span class="op">=</span><span class="st">'relu'</span>, kernel_regularizer<span class="op">=</span><span class="st">'l2'</span>),</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>    layers.Dropout(<span class="fl">0.5</span>),</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">128</span>, activation<span class="op">=</span><span class="st">'relu'</span>, kernel_regularizer<span class="op">=</span><span class="st">'l2'</span>),</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>    layers.Dropout(<span class="fl">0.5</span>),</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">2</span>, activation<span class="op">=</span><span class="st">'softmax'</span>)</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> optimizers.Adam(learning_rate<span class="op">=</span><span class="fl">0.001</span>)</span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>model2.<span class="bu">compile</span>(optimizer<span class="op">=</span>optimizer,</span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>               loss<span class="op">=</span><span class="st">'sparse_categorical_crossentropy'</span>,</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>               metrics<span class="op">=</span>[<span class="st">'accuracy'</span>])</span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>model2.build(input_shape<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">150</span>, <span class="dv">150</span>, <span class="dv">3</span>))</span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>model2.summary()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model: "sequential_73"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ sequential_69 (Sequential)  (None, 150, 150, 3)       0         
+                                                                 
+ conv2d_92 (Conv2D)          (0, 148, 148, 32)         896       
+                                                                 
+ batch_normalization_36 (Ba  (0, 148, 148, 32)         128       
+ tchNormalization)                                               
+                                                                 
+ max_pooling2d_92 (MaxPooli  (0, 74, 74, 32)           0         
+ ng2D)                                                           
+                                                                 
+ conv2d_93 (Conv2D)          (0, 72, 72, 64)           18496     
+                                                                 
+ batch_normalization_37 (Ba  (0, 72, 72, 64)           256       
+ tchNormalization)                                               
+                                                                 
+ max_pooling2d_93 (MaxPooli  (0, 36, 36, 64)           0         
+ ng2D)                                                           
+                                                                 
+ conv2d_94 (Conv2D)          (0, 34, 34, 128)          73856     
+                                                                 
+ batch_normalization_38 (Ba  (0, 34, 34, 128)          512       
+ tchNormalization)                                               
+                                                                 
+ max_pooling2d_94 (MaxPooli  (0, 17, 17, 128)          0         
+ ng2D)                                                           
+                                                                 
+ flatten_46 (Flatten)        (0, 36992)                0         
+                                                                 
+ dense_113 (Dense)           (0, 256)                  9470208   
+                                                                 
+ dropout_63 (Dropout)        (0, 256)                  0         
+                                                                 
+ dense_114 (Dense)           (0, 128)                  32896     
+                                                                 
+ dropout_64 (Dropout)        (0, 128)                  0         
+                                                                 
+ dense_115 (Dense)           (0, 2)                    258       
+                                                                 
+=================================================================
+Total params: 9597506 (36.61 MB)
+Trainable params: 9597058 (36.61 MB)
+Non-trainable params: 448 (1.75 KB)
+_________________________________________________________________</code></pre>
+</div>
+</div>
+<div id="cell-56" class="cell" data-outputid="d0e228da-3489-42a2-b691-73569f3bda84">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the model</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>history2 <span class="op">=</span> model2.fit(train_ds,</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>                      epochs<span class="op">=</span><span class="dv">20</span>,  <span class="co"># Adjust number of epochs as needed</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>                      validation_data<span class="op">=</span>validation_ds)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model on the test dataset</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>test_loss2, test_accuracy2 <span class="op">=</span> model2.evaluate(test_ds)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Test Accuracy:"</span>, test_accuracy2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Epoch 1/20
+146/146 [==============================] - 12s 59ms/step - loss: 10.2594 - accuracy: 0.5320 - val_loss: 6.6252 - val_accuracy: 0.5361
+Epoch 2/20
+146/146 [==============================] - 8s 57ms/step - loss: 4.7472 - accuracy: 0.5433 - val_loss: 3.2592 - val_accuracy: 0.5649
+Epoch 3/20
+146/146 [==============================] - 8s 58ms/step - loss: 2.6569 - accuracy: 0.5442 - val_loss: 2.1948 - val_accuracy: 0.5907
+Epoch 4/20
+146/146 [==============================] - 8s 58ms/step - loss: 1.9697 - accuracy: 0.5592 - val_loss: 1.8180 - val_accuracy: 0.5666
+Epoch 5/20
+146/146 [==============================] - 8s 57ms/step - loss: 2.0790 - accuracy: 0.5768 - val_loss: 1.6866 - val_accuracy: 0.6148
+Epoch 6/20
+146/146 [==============================] - 8s 58ms/step - loss: 1.6990 - accuracy: 0.5999 - val_loss: 1.5983 - val_accuracy: 0.6720
+Epoch 7/20
+146/146 [==============================] - 8s 58ms/step - loss: 1.4614 - accuracy: 0.6354 - val_loss: 1.3530 - val_accuracy: 0.6991
+Epoch 8/20
+146/146 [==============================] - 9s 59ms/step - loss: 1.4409 - accuracy: 0.6603 - val_loss: 1.3416 - val_accuracy: 0.6672
+Epoch 9/20
+146/146 [==============================] - 9s 63ms/step - loss: 1.2363 - accuracy: 0.6926 - val_loss: 1.1391 - val_accuracy: 0.7390
+Epoch 10/20
+146/146 [==============================] - 9s 61ms/step - loss: 1.1374 - accuracy: 0.7116 - val_loss: 1.0972 - val_accuracy: 0.7326
+Epoch 11/20
+146/146 [==============================] - 9s 58ms/step - loss: 1.0648 - accuracy: 0.7272 - val_loss: 1.0668 - val_accuracy: 0.7046
+Epoch 12/20
+146/146 [==============================] - 9s 59ms/step - loss: 1.0030 - accuracy: 0.7387 - val_loss: 1.0666 - val_accuracy: 0.5813
+Epoch 13/20
+146/146 [==============================] - 8s 58ms/step - loss: 0.9709 - accuracy: 0.7508 - val_loss: 0.9421 - val_accuracy: 0.7571
+Epoch 14/20
+146/146 [==============================] - 9s 58ms/step - loss: 0.9539 - accuracy: 0.7617 - val_loss: 0.9857 - val_accuracy: 0.7833
+Epoch 15/20
+146/146 [==============================] - 9s 58ms/step - loss: 0.9781 - accuracy: 0.7735 - val_loss: 0.9953 - val_accuracy: 0.7734
+Epoch 16/20
+146/146 [==============================] - 8s 58ms/step - loss: 0.9934 - accuracy: 0.7815 - val_loss: 1.0280 - val_accuracy: 0.7528
+Epoch 17/20
+146/146 [==============================] - 9s 59ms/step - loss: 0.9874 - accuracy: 0.7968 - val_loss: 1.6072 - val_accuracy: 0.5972
+Epoch 18/20
+146/146 [==============================] - 9s 59ms/step - loss: 1.0057 - accuracy: 0.7936 - val_loss: 1.0957 - val_accuracy: 0.7141
+Epoch 19/20
+146/146 [==============================] - 9s 58ms/step - loss: 1.0037 - accuracy: 0.8043 - val_loss: 1.0728 - val_accuracy: 0.7726
+Epoch 20/20
+146/146 [==============================] - 9s 59ms/step - loss: 1.0365 - accuracy: 0.8056 - val_loss: 1.0029 - val_accuracy: 0.8177
+37/37 [==============================] - 1s 14ms/step - loss: 1.0126 - accuracy: 0.8009
+Test Accuracy: 0.8009458184242249</code></pre>
+</div>
+</div>
+<div id="cell-57" class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize training history</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>plt.plot(history2.history[<span class="st">'accuracy'</span>], label<span class="op">=</span><span class="st">'accuracy'</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>plt.plot(history2.history[<span class="st">'val_accuracy'</span>], label<span class="op">=</span><span class="st">'val_accuracy'</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Epoch'</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Accuracy'</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-58" class="cell" data-outputid="0a96a06c-afee-450a-8e52-65a8ac2b3891">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize training history</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>plt.plot(history2.history[<span class="st">'accuracy'</span>], label<span class="op">=</span><span class="st">'accuracy'</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>plt.plot(history2.history[<span class="st">'val_accuracy'</span>], label<span class="op">=</span><span class="st">'val_accuracy'</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Epoch'</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Accuracy'</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Upon reviewing the learning curve before making adjustments to our model (model1), I noticed signs of overfitting. To address this, I introduced normalization, which helped stabilize the training process. However, the validation accuracy still displayed erratic behavior, indicating fluctuations across epochs. In response, I fine-tuned the learning rate to mitigate these fluctuations and further enhance model performance.</p>
+<p><strong>The accuracy of my model stabilized between 0.5320 and 0.8056 during training on the training set, 0.5361 to 0.8177 on validation set.</strong></p>
+<p>The result is better than that of model1.</p>
+<p>There are not much of overfitting observed since the accuracy on validation date changes in a same rate as that on training set. There might be a little problem showed in the plot about the learning rate since there is a big jump.</p>
+</section>
+<section id="model3-data-preprocessing-model2-1" class="level2">
+<h2 class="anchored" data-anchor-id="model3-data-preprocessing-model2-1">5. Model3 (Data Preprocessing + Model2)</h2>
+<p>Optimizing the training process often involves preprocessing the input data. For instance, scaling RGB pixel values from 0-255 to a standardized range like 0-1 or -1 to 1 can accelerate model convergence. By doing this preprocessing upfront, we ensure the model focuses on learning meaningful patterns, rather than adjusting to the data scale during training.</p>
+<div id="cell-62" class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> keras.Input(shape<span class="op">=</span>(<span class="dv">150</span>, <span class="dv">150</span>, <span class="dv">3</span>))</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The pixel values have the range of (0, 255), but many models will work better if rescaled to (-1, 1.)</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># outputs: `(inputs * scale) + offset`</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>scale_layer <span class="op">=</span> keras.layers.Rescaling(scale<span class="op">=</span><span class="dv">1</span> <span class="op">/</span> <span class="fl">127.5</span>, offset<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> scale_layer(i)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>preprocessor <span class="op">=</span> keras.Model(inputs <span class="op">=</span> i, outputs <span class="op">=</span> x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>i = keras.Input(shape=(150, 150, 3))</code>: creates an input layer for the neural network with a specified shape of (150, 150, 3). This shape indicates that the input data consists of images with a height and width of 150 pixels and 3 color channels (RGB).</p>
+<p><code>scale_layer = keras.layers.Rescaling(scale=1 / 127.5, offset=-1)</code>: creates a rescaling layer using <code>keras.layers.Rescaling</code>. The purpose of this layer is to rescale the pixel values of the input images. - The <code>scale</code> parameter specifies the scaling factor applied to the pixel values. Here, the scale factor is set to 1 divided by 127.5, which rescales the pixel values from the original range of (0, 255) to (-1, 1). - The <code>offset</code> parameter specifies the offset applied to the pixel values after scaling. In this case, an offset of -1 is used, which shifts the scaled pixel values to be centered around -1.</p>
+<p><code>x = scale_layer(i)</code>: applies the rescaling layer (<code>scale_layer</code>) to the input layer (<code>i</code>). It takes the input images and rescales their pixel values according to the specified scale and offset parameters.</p>
+<p><code>preprocessor = keras.Model(inputs=i, outputs=x)</code>: This line creates a Keras model (<code>preprocessor</code>) by specifying the input and output layers. - The <code>inputs</code> argument specifies the input layer (<code>i</code>) of the model. - The <code>outputs</code> argument specifies the output layer (<code>x</code>) of the model, which is the result of applying the rescaling layer to the input images.</p>
+<div id="cell-64" class="cell" data-outputid="90c117c4-83b5-49a3-c930-8aaa108e661f">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>model3 <span class="op">=</span> models.Sequential([</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    preprocessor,</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    data_augmentation,</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">32</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>, input_shape<span class="op">=</span>(<span class="dv">150</span>, <span class="dv">150</span>, <span class="dv">3</span>)),</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    layers.BatchNormalization(),</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">64</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    layers.BatchNormalization(),</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">128</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>    layers.BatchNormalization(),</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>    layers.Flatten(),</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">256</span>, activation<span class="op">=</span><span class="st">'relu'</span>, kernel_regularizer<span class="op">=</span><span class="st">'l2'</span>),</span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>    layers.Dropout(<span class="fl">0.5</span>),</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">128</span>, activation<span class="op">=</span><span class="st">'relu'</span>, kernel_regularizer<span class="op">=</span><span class="st">'l2'</span>),</span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>    layers.Dropout(<span class="fl">0.5</span>),</span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">2</span>, activation<span class="op">=</span><span class="st">'softmax'</span>)</span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>model3.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">'adam'</span>,</span>
+<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>               loss<span class="op">=</span><span class="st">'sparse_categorical_crossentropy'</span>,</span>
+<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>               metrics<span class="op">=</span>[<span class="st">'accuracy'</span>])</span>
+<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a>model3.summary()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model: "sequential_70"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ model_3 (Functional)        (None, 150, 150, 3)       0         
+                                                                 
+ sequential_69 (Sequential)  (None, 150, 150, 3)       0         
+                                                                 
+ conv2d_83 (Conv2D)          (None, 148, 148, 32)      896       
+                                                                 
+ batch_normalization_27 (Ba  (None, 148, 148, 32)      128       
+ tchNormalization)                                               
+                                                                 
+ max_pooling2d_83 (MaxPooli  (None, 74, 74, 32)        0         
+ ng2D)                                                           
+                                                                 
+ conv2d_84 (Conv2D)          (None, 72, 72, 64)        18496     
+                                                                 
+ batch_normalization_28 (Ba  (None, 72, 72, 64)        256       
+ tchNormalization)                                               
+                                                                 
+ max_pooling2d_84 (MaxPooli  (None, 36, 36, 64)        0         
+ ng2D)                                                           
+                                                                 
+ conv2d_85 (Conv2D)          (None, 34, 34, 128)       73856     
+                                                                 
+ batch_normalization_29 (Ba  (None, 34, 34, 128)       512       
+ tchNormalization)                                               
+                                                                 
+ max_pooling2d_85 (MaxPooli  (None, 17, 17, 128)       0         
+ ng2D)                                                           
+                                                                 
+ flatten_43 (Flatten)        (None, 36992)             0         
+                                                                 
+ dense_104 (Dense)           (None, 256)               9470208   
+                                                                 
+ dropout_57 (Dropout)        (None, 256)               0         
+                                                                 
+ dense_105 (Dense)           (None, 128)               32896     
+                                                                 
+ dropout_58 (Dropout)        (None, 128)               0         
+                                                                 
+ dense_106 (Dense)           (None, 2)                 258       
+                                                                 
+=================================================================
+Total params: 9597506 (36.61 MB)
+Trainable params: 9597058 (36.61 MB)
+Non-trainable params: 448 (1.75 KB)
+_________________________________________________________________</code></pre>
+</div>
+</div>
+<div id="cell-65" class="cell" data-outputid="2133daa6-202d-4645-b103-a1e359ab0491">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the model</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>history3 <span class="op">=</span> model3.fit(train_ds,</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>                      epochs<span class="op">=</span><span class="dv">20</span>,  <span class="co"># Adjust number of epochs as needed</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                      validation_data<span class="op">=</span>validation_ds)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model on the test dataset</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>test_loss3, test_accuracy3 <span class="op">=</span> model3.evaluate(test_ds)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Test Accuracy:"</span>, test_accuracy3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Epoch 1/20
+146/146 [==============================] - 12s 60ms/step - loss: 10.0631 - accuracy: 0.5254 - val_loss: 5.9596 - val_accuracy: 0.5688
+Epoch 2/20
+146/146 [==============================] - 9s 59ms/step - loss: 4.3297 - accuracy: 0.5499 - val_loss: 2.7815 - val_accuracy: 0.5572
+Epoch 3/20
+146/146 [==============================] - 9s 59ms/step - loss: 2.2299 - accuracy: 0.5754 - val_loss: 1.7637 - val_accuracy: 0.6522
+Epoch 4/20
+146/146 [==============================] - 9s 59ms/step - loss: 1.7072 - accuracy: 0.6127 - val_loss: 1.5206 - val_accuracy: 0.6883
+Epoch 5/20
+146/146 [==============================] - 9s 59ms/step - loss: 1.4526 - accuracy: 0.6515 - val_loss: 1.2516 - val_accuracy: 0.6986
+Epoch 6/20
+146/146 [==============================] - 9s 59ms/step - loss: 1.2677 - accuracy: 0.6750 - val_loss: 1.1779 - val_accuracy: 0.7089
+Epoch 7/20
+146/146 [==============================] - 9s 59ms/step - loss: 1.1140 - accuracy: 0.7018 - val_loss: 1.0114 - val_accuracy: 0.7343
+Epoch 8/20
+146/146 [==============================] - 9s 60ms/step - loss: 1.0681 - accuracy: 0.7045 - val_loss: 1.0099 - val_accuracy: 0.7455
+Epoch 9/20
+146/146 [==============================] - 9s 59ms/step - loss: 0.9997 - accuracy: 0.7148 - val_loss: 0.9187 - val_accuracy: 0.7356
+Epoch 10/20
+146/146 [==============================] - 9s 59ms/step - loss: 0.9316 - accuracy: 0.7268 - val_loss: 0.8829 - val_accuracy: 0.7463
+Epoch 11/20
+146/146 [==============================] - 9s 59ms/step - loss: 0.9327 - accuracy: 0.7350 - val_loss: 0.9016 - val_accuracy: 0.7347
+Epoch 12/20
+146/146 [==============================] - 9s 60ms/step - loss: 0.9197 - accuracy: 0.7484 - val_loss: 0.8830 - val_accuracy: 0.7696
+Epoch 13/20
+146/146 [==============================] - 9s 60ms/step - loss: 0.9175 - accuracy: 0.7618 - val_loss: 0.8468 - val_accuracy: 0.7760
+Epoch 14/20
+146/146 [==============================] - 9s 59ms/step - loss: 0.8820 - accuracy: 0.7687 - val_loss: 0.8446 - val_accuracy: 0.7923
+Epoch 15/20
+146/146 [==============================] - 9s 59ms/step - loss: 0.8882 - accuracy: 0.7796 - val_loss: 0.8653 - val_accuracy: 0.8160
+Epoch 16/20
+146/146 [==============================] - 9s 60ms/step - loss: 0.9015 - accuracy: 0.7896 - val_loss: 0.8698 - val_accuracy: 0.8095
+Epoch 17/20
+146/146 [==============================] - 10s 66ms/step - loss: 0.9165 - accuracy: 0.7855 - val_loss: 1.0431 - val_accuracy: 0.7313
+Epoch 18/20
+146/146 [==============================] - 9s 60ms/step - loss: 0.9613 - accuracy: 0.7932 - val_loss: 1.1202 - val_accuracy: 0.7498
+Epoch 19/20
+146/146 [==============================] - 9s 63ms/step - loss: 1.0268 - accuracy: 0.7967 - val_loss: 0.9967 - val_accuracy: 0.8310
+Epoch 20/20
+146/146 [==============================] - 9s 65ms/step - loss: 1.0292 - accuracy: 0.8098 - val_loss: 0.9447 - val_accuracy: 0.8121
+37/37 [==============================] - 1s 17ms/step - loss: 0.9431 - accuracy: 0.8104
+Test Accuracy: 0.8104041218757629</code></pre>
+</div>
+</div>
+<div id="cell-66" class="cell" data-outputid="5f675c73-aa2c-413e-9bb1-d856f3796332">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize training history</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>plt.plot(history3.history[<span class="st">'accuracy'</span>], label<span class="op">=</span><span class="st">'accuracy'</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>plt.plot(history3.history[<span class="st">'val_accuracy'</span>], label<span class="op">=</span><span class="st">'val_accuracy'</span>)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Epoch'</span>)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Accuracy'</span>)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now that I think you can read pretty well about the layers of the model.</p>
+<p><strong>The accuracy of my model stabilized between 0.5254 and 0.8098 during training on the training set, 0.5688 to 0.8121 on validation set.</strong></p>
+<p>The result is better than that of model1 and similar to model2.</p>
+<p>There are not much of overfitting observed since the accuracy on validation date changes in a same rate as that on training set.</p>
+</section>
+<section id="model4-data-augmentation-transfer-learning-1" class="level2">
+<h2 class="anchored" data-anchor-id="model4-data-augmentation-transfer-learning-1">6. Model4 (Data Augmentation + Transfer Learning)</h2>
+<p>Transfer learning is a machine learning technique where a model trained on one task is reused or adapted as a starting point for a second related task. In transfer learning, knowledge gained while solving one problem is applied to a different but related problem. This approach is particularly useful in scenarios where the second task has less data available for training or where training a model from scratch might be time-consuming or resource-intensive.</p>
+<p>So far, we’ve been training models for distinguishing between cats and dogs from scratch. In some cases, however, someone might already have trained a model that does a related task, and might have learned some relevant patterns. For example, folks train machine learning models for a variety of image recognition tasks. Maybe we could use a pre-existing model for our task?</p>
+<p>To do this, we need to first access a pre-existing “base model”, incorporate it into a full model for our current task, and then train that model.</p>
+<p>MobileNetV3Large is a convolutional neural network architecture designed for efficient and accurate image classification tasks. It is part of the MobileNet family of models developed by Google, which are specifically optimized for mobile and embedded devices.</p>
+<p>MobileNetV3Large builds upon the success of its predecessors, MobileNetV1 and MobileNetV2, by introducing novel architectural changes and optimization techniques aimed at improving performance while maintaining efficiency. The “Large” variant of MobileNetV3 typically refers to a larger and more powerful version of the model, capable of handling more complex tasks and providing higher accuracy.</p>
+<div id="cell-70" class="cell" data-outputid="a59c3053-e450-4f45-c6e1-04fcbba313a3" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>IMG_SHAPE <span class="op">=</span> (<span class="dv">150</span>, <span class="dv">150</span>, <span class="dv">3</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>base_model <span class="op">=</span> keras.applications.MobileNetV3Large(input_shape<span class="op">=</span>IMG_SHAPE,</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>                                               include_top<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>                                               weights<span class="op">=</span><span class="st">'imagenet'</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>base_model.trainable <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> keras.Input(shape<span class="op">=</span>IMG_SHAPE)</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> base_model(i, training <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>base_model_layer <span class="op">=</span> keras.Model(inputs <span class="op">=</span> i, outputs <span class="op">=</span> x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>WARNING:tensorflow:`input_shape` is undefined or non-square, or `rows` is not 224. Weights for input shape (224, 224) will be loaded as the default.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/mobilenet_v3/weights_mobilenet_v3_large_224_1.0_float_no_top_v2.h5
+12683000/12683000 [==============================] - 1s 0us/step</code></pre>
+</div>
+</div>
+<p>This code snippet involves setting up and configuring a pre-trained MobileNetV3Large model as a feature extractor using TensorFlow’s Keras API.</p>
+<p>Let’s break it down step by step:</p>
+<ol type="1">
+<li><strong>Setting Input Shape</strong>:
+<ul>
+<li><code>IMG_SHAPE = (150, 150, 3)</code>: defines the shape of the input images. Here, <code>(150, 150, 3)</code> indicates images with a height and width of 150 pixels and 3 color channels (RGB).</li>
+</ul></li>
+<li><strong>Loading Pre-trained MobileNetV3Large Model</strong>:
+<ul>
+<li><code>base_model = keras.applications.MobileNetV3Large(input_shape=IMG_SHAPE, include_top=False, weights='imagenet')</code>: This line loads the MobileNetV3Large model pre-trained on the ImageNet dataset.
+<ul>
+<li><code>input_shape=IMG_SHAPE</code>: Specifies the input shape of the images to be fed into the model.</li>
+<li><code>include_top=False</code>: Indicates that we don’t want to include the fully connected layers (top layers) of the pre-trained model, as we intend to use it as a feature extractor.</li>
+<li><code>weights='imagenet'</code>: Specifies that we want to load the weights pre-trained on the ImageNet dataset.</li>
+</ul></li>
+</ul></li>
+<li><strong>Freezing Base Model Weights</strong>:
+<ul>
+<li><code>base_model.trainable = False</code>: freezes the weights of the pre-trained MobileNetV3Large model. By setting <code>trainable</code> to <code>False</code>, we ensure that the weights of the base model remain fixed during training, preventing them from being updated.</li>
+</ul></li>
+<li><strong>Defining Input Layer</strong>:
+<ul>
+<li><code>i = keras.Input(shape=IMG_SHAPE)</code>: defines an input layer for the model with the specified input shape.</li>
+</ul></li>
+<li><strong>Connecting Input and Base Model</strong>:
+<ul>
+<li><code>x = base_model(i, training=False)</code>: passes the input layer <code>i</code> through the pre-trained MobileNetV3Large model (<code>base_model</code>) with <code>training=False</code>. This means that the base model will run in inference mode, without updating its weights.</li>
+</ul></li>
+<li><strong>Creating Base Model Layer</strong>:
+<ul>
+<li><code>base_model_layer = keras.Model(inputs=i, outputs=x)</code>: creates a Keras model (<code>base_model_layer</code>) with the input layer <code>i</code> and the output layer <code>x</code>. The output of this model will be the features extracted by the MobileNetV3Large model from the input images.</li>
+</ul></li>
+</ol>
+<div id="cell-72" class="cell" data-outputid="c5f1c9e9-8559-49f6-cd63-1d045f169dc2" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>model4 <span class="op">=</span> models.Sequential([</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  base_model_layer,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  layers.Flatten(),</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Output layer</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  layers.Dense(<span class="dv">1</span>, activation<span class="op">=</span><span class="st">'sigmoid'</span>)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>model4.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">'adam'</span>,</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>              loss<span class="op">=</span><span class="st">'binary_crossentropy'</span>,</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>              metrics<span class="op">=</span>[<span class="st">'accuracy'</span>])</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display model summary</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>model4.summary()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ model (Functional)          (None, 5, 5, 960)         2996352   
+                                                                 
+ flatten (Flatten)           (None, 24000)             0         
+                                                                 
+ dense (Dense)               (None, 1)                 24001     
+                                                                 
+=================================================================
+Total params: 3020353 (11.52 MB)
+Trainable params: 24001 (93.75 KB)
+Non-trainable params: 2996352 (11.43 MB)
+_________________________________________________________________</code></pre>
+</div>
+</div>
+<p><strong>Layer Information</strong>: - The first layer is named “model” and is described as a Functional layer. It has an output shape of (None, 5, 5, 960), indicating that it produces feature maps with dimensions 5x5 and 960 channels. - The second layer is a Flatten layer, which converts the multi-dimensional output of the previous layer into a one-dimensional vector. It has an output shape of (None, 24000). - The third layer is a Dense layer with a single neuron, producing a scalar output. Its output shape is (None, 1).</p>
+<p><strong>Parameter Count</strong>: - “Total params” indicates the total number of parameters (weights and biases) in the model, which is 3,020,353 (approximately 3 million parameters). This number is a sum of trainable and non-trainable parameters. - “Trainable params” indicates the number of parameters that are trainable during the training process, which is 24,001 parameters. - “Non-trainable params” indicates the number of parameters that are not trainable, typically associated with pre-trained layers or frozen layers. In this case, there are 2,996,352 non-trainable parameters.</p>
+<p>Overall, the parameter use is huge.</p>
+<p>Like before:</p>
+<ol type="1">
+<li><strong>Sequential Model Creation</strong>:
+<ul>
+<li><code>model4 = models.Sequential([...])</code>: This line initializes a sequential model (<code>Sequential</code>) which is a linear stack of layers. Layers are added one by one in sequence.</li>
+</ul></li>
+<li><strong>Adding Layers to the Model</strong>:
+<ul>
+<li><code>base_model_layer</code>: The pre-trained MobileNetV3Large model (<code>base_model_layer</code>) that we defined earlier is added as the first layer in the sequential model. This serves as a feature extractor, providing high-level features extracted from the input images.</li>
+<li><code>layers.Flatten()</code>: This layer is added to flatten the output of the previous layer (which is typically a multi-dimensional tensor) into a one-dimensional vector. This prepares the data for the subsequent dense (fully connected) layers.</li>
+<li><code>layers.Dense(1, activation='sigmoid')</code>: This is the output layer of the model, consisting of a single neuron with a sigmoid activation function. It produces a binary classification output (0 or 1) indicating the probability that the input image belongs to a particular class (e.g., cat or dog).</li>
+</ul></li>
+<li><strong>Model Compilation</strong>:
+<ul>
+<li><code>model4.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])</code>: This line compiles the model, configuring its training process.
+<ul>
+<li><code>optimizer='adam'</code>: Adam is selected as the optimizer for gradient descent, which is widely used for its efficiency and effectiveness in training neural networks.</li>
+<li><code>loss='binary_crossentropy'</code>: Binary crossentropy is chosen as the loss function, which is suitable for binary classification tasks where the output is either 0 or 1.</li>
+<li><code>metrics=['accuracy']</code>: During training, the model’s performance will be evaluated based on accuracy, which measures the proportion of correctly classified samples.</li>
+</ul></li>
+</ul></li>
+</ol>
+<div id="cell-75" class="cell" data-outputid="ec397351-1ba3-4e2f-9383-f879568cf56f">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>history4 <span class="op">=</span> model4.fit(train_ds,</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>                      epochs<span class="op">=</span><span class="dv">20</span>,  <span class="co"># Adjust number of epochs as needed</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>                      validation_data<span class="op">=</span>validation_ds)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model on the test dataset</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>test_loss4, test_accuracy4 <span class="op">=</span> model4.evaluate(test_ds)</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Test Accuracy:"</span>, test_accuracy4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Epoch 1/20
+146/146 [==============================] - 14s 62ms/step - loss: 0.2100 - accuracy: 0.9503 - val_loss: 0.1657 - val_accuracy: 0.9682
+Epoch 2/20
+146/146 [==============================] - 6s 40ms/step - loss: 0.0524 - accuracy: 0.9855 - val_loss: 0.1651 - val_accuracy: 0.9764
+Epoch 3/20
+146/146 [==============================] - 6s 40ms/step - loss: 0.0105 - accuracy: 0.9966 - val_loss: 0.1684 - val_accuracy: 0.9751
+Epoch 4/20
+146/146 [==============================] - 6s 41ms/step - loss: 0.0048 - accuracy: 0.9983 - val_loss: 0.1697 - val_accuracy: 0.9738
+Epoch 5/20
+146/146 [==============================] - 6s 40ms/step - loss: 0.0019 - accuracy: 0.9992 - val_loss: 0.1758 - val_accuracy: 0.9742
+Epoch 6/20
+146/146 [==============================] - 6s 41ms/step - loss: 8.7343e-04 - accuracy: 0.9998 - val_loss: 0.1844 - val_accuracy: 0.9712
+Epoch 7/20
+146/146 [==============================] - 6s 42ms/step - loss: 6.2764e-04 - accuracy: 0.9999 - val_loss: 0.1802 - val_accuracy: 0.9738
+Epoch 8/20
+146/146 [==============================] - 6s 41ms/step - loss: 1.5256e-04 - accuracy: 1.0000 - val_loss: 0.1757 - val_accuracy: 0.9746
+Epoch 9/20
+146/146 [==============================] - 6s 41ms/step - loss: 5.0254e-05 - accuracy: 1.0000 - val_loss: 0.1754 - val_accuracy: 0.9746
+Epoch 10/20
+146/146 [==============================] - 6s 40ms/step - loss: 3.9323e-05 - accuracy: 1.0000 - val_loss: 0.1752 - val_accuracy: 0.9746
+Epoch 11/20
+146/146 [==============================] - 6s 41ms/step - loss: 3.4001e-05 - accuracy: 1.0000 - val_loss: 0.1751 - val_accuracy: 0.9751
+Epoch 12/20
+146/146 [==============================] - 6s 41ms/step - loss: 3.0114e-05 - accuracy: 1.0000 - val_loss: 0.1750 - val_accuracy: 0.9751
+Epoch 13/20
+146/146 [==============================] - 6s 41ms/step - loss: 2.7043e-05 - accuracy: 1.0000 - val_loss: 0.1748 - val_accuracy: 0.9751
+Epoch 14/20
+146/146 [==============================] - 6s 41ms/step - loss: 2.4513e-05 - accuracy: 1.0000 - val_loss: 0.1747 - val_accuracy: 0.9755
+Epoch 15/20
+146/146 [==============================] - 6s 41ms/step - loss: 2.2374e-05 - accuracy: 1.0000 - val_loss: 0.1747 - val_accuracy: 0.9755
+Epoch 16/20
+146/146 [==============================] - 6s 41ms/step - loss: 2.0533e-05 - accuracy: 1.0000 - val_loss: 0.1746 - val_accuracy: 0.9755
+Epoch 17/20
+146/146 [==============================] - 6s 41ms/step - loss: 1.8924e-05 - accuracy: 1.0000 - val_loss: 0.1745 - val_accuracy: 0.9755
+Epoch 18/20
+146/146 [==============================] - 6s 41ms/step - loss: 1.7504e-05 - accuracy: 1.0000 - val_loss: 0.1745 - val_accuracy: 0.9759
+Epoch 19/20
+146/146 [==============================] - 6s 42ms/step - loss: 1.6240e-05 - accuracy: 1.0000 - val_loss: 0.1744 - val_accuracy: 0.9759
+Epoch 20/20
+146/146 [==============================] - 6s 42ms/step - loss: 1.5106e-05 - accuracy: 1.0000 - val_loss: 0.1744 - val_accuracy: 0.9759
+37/37 [==============================] - 1s 33ms/step - loss: 0.1828 - accuracy: 0.9716
+Test Accuracy: 0.9716250896453857</code></pre>
+</div>
+</div>
+<div id="cell-76" class="cell" data-outputid="e87d5e3e-6c6c-4461-fc56-75a588fa3ddd">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize training history</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>plt.plot(history4.history[<span class="st">'accuracy'</span>], label<span class="op">=</span><span class="st">'accuracy'</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>plt.plot(history4.history[<span class="st">'val_accuracy'</span>], label<span class="op">=</span><span class="st">'val_accuracy'</span>)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Epoch'</span>)</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Accuracy'</span>)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-31-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>The accuracy of my model stabilized between accuracy: 0.9503 and 1.0000 during training on the training set, 0.9682 to 0.9759 on validation set.</strong></p>
+<p>The result is better than that of model1, model2, and model3</p>
+<p>There is overfitting since the accuracy on training set is better than that on the validation data set and not to mention that the accuracy achieved 1 at the end on the training set.</p>
+<p>Since model4 that uses MobileNetV3Large performs best, the test score of model4 on test set is 0.9716250896453857!!!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="application/vnd.jupyter.widget-state+json">
+{"136a30e6c224447780e8d0cf076af386":{"model_module":"@jupyter-widgets/controls","model_name":"HBoxModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_c175f176ce6b4339aa9660c4c76ef05c","IPY_MODEL_cd01950dfa654618946acbd554456b19","IPY_MODEL_8092cd46e9b64450b299a780bd5221a5"],"layout":"IPY_MODEL_20343055e2f248df9067d8ee870c945b"}},"c175f176ce6b4339aa9660c4c76ef05c":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_9507c24d32974ed5802a867bfd398005","placeholder":"​","style":"IPY_MODEL_76ce38536cd14327ae3b641de04f341a","value":"Dl Completed...: 100%"}},"cd01950dfa654618946acbd554456b19":{"model_module":"@jupyter-widgets/controls","model_name":"FloatProgressModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_15559325176c4731a6cab36826fbe316","max":1,"min":0,"orientation":"horizontal","style":"IPY_MODEL_9eff93c7c5da458aae788796911db117","value":1}},"8092cd46e9b64450b299a780bd5221a5":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_d2189c07a41b40b988af7a8e8a8b234a","placeholder":"​","style":"IPY_MODEL_e5001167697c4f4d8652a605eb611c7b","value":" 1/1 [00:18&lt;00:00, 18.34s/ url]"}},"20343055e2f248df9067d8ee870c945b":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"9507c24d32974ed5802a867bfd398005":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"76ce38536cd14327ae3b641de04f341a":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"15559325176c4731a6cab36826fbe316":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":"20px"}},"9eff93c7c5da458aae788796911db117":{"model_module":"@jupyter-widgets/controls","model_name":"ProgressStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"d2189c07a41b40b988af7a8e8a8b234a":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"e5001167697c4f4d8652a605eb611c7b":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"ea64c7b6f12445b2b0cc338d9155d31c":{"model_module":"@jupyter-widgets/controls","model_name":"HBoxModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_291026a8034748599b00cd2dc4166f7a","IPY_MODEL_6c92519036974447940cb9a2225023f6","IPY_MODEL_9b854bdefe3f410082a3af117fb91c88"],"layout":"IPY_MODEL_0e09b6c53b65433a8476333d6076f14e"}},"291026a8034748599b00cd2dc4166f7a":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_d08d248f649a49cf8e657fb8b02c7e51","placeholder":"​","style":"IPY_MODEL_5887e929b58d40b4baddcf1f050f7a27","value":"Dl Size...: 100%"}},"6c92519036974447940cb9a2225023f6":{"model_module":"@jupyter-widgets/controls","model_name":"FloatProgressModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_d21a910d92b549bbaf7e97ceec028aef","max":1,"min":0,"orientation":"horizontal","style":"IPY_MODEL_45dc77eb968a45c3940081546c5ac1e9","value":1}},"9b854bdefe3f410082a3af117fb91c88":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_84d154312b5f4c6eb6c283c399562592","placeholder":"​","style":"IPY_MODEL_2ac09ce939c641f7a537f6f5221b3c83","value":" 786/786 [00:18&lt;00:00, 57.85 MiB/s]"}},"0e09b6c53b65433a8476333d6076f14e":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"d08d248f649a49cf8e657fb8b02c7e51":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"5887e929b58d40b4baddcf1f050f7a27":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"d21a910d92b549bbaf7e97ceec028aef":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":"20px"}},"45dc77eb968a45c3940081546c5ac1e9":{"model_module":"@jupyter-widgets/controls","model_name":"ProgressStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"84d154312b5f4c6eb6c283c399562592":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"2ac09ce939c641f7a537f6f5221b3c83":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"e726f9d6e99e4839bd974fd479dcdbe1":{"model_module":"@jupyter-widgets/controls","model_name":"HBoxModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_5140ebd8beec4337909531ce7ded0eb5","IPY_MODEL_a9d4e75fb6ff4e76b9bf81e76ad3f272","IPY_MODEL_c2bd31f429f94d07bdab563d771cd081"],"layout":"IPY_MODEL_b26879c6fe984e6f9eb085af70ac26a7"}},"5140ebd8beec4337909531ce7ded0eb5":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_36a40f4e99c648438f3e2a300839aaac","placeholder":"​","style":"IPY_MODEL_d332c63f564647a49962512655e5528c","value":"Generating splits...: 100%"}},"a9d4e75fb6ff4e76b9bf81e76ad3f272":{"model_module":"@jupyter-widgets/controls","model_name":"FloatProgressModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"","description":"","description_tooltip":null,"layout":"IPY_MODEL_68e16469562b42f9bf0272b3605ac6a6","max":1,"min":0,"orientation":"horizontal","style":"IPY_MODEL_f57088a30bdd402a8227557d88cef8cc","value":1}},"c2bd31f429f94d07bdab563d771cd081":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_752dc917fa454b728ae80307cf5df35f","placeholder":"​","style":"IPY_MODEL_46b97834ac614ebe9d287fdaaa3a8a31","value":" 1/1 [01:47&lt;00:00, 107.98s/ splits]"}},"b26879c6fe984e6f9eb085af70ac26a7":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":"hidden","width":null}},"36a40f4e99c648438f3e2a300839aaac":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"d332c63f564647a49962512655e5528c":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"68e16469562b42f9bf0272b3605ac6a6":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"f57088a30bdd402a8227557d88cef8cc":{"model_module":"@jupyter-widgets/controls","model_name":"ProgressStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"752dc917fa454b728ae80307cf5df35f":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"46b97834ac614ebe9d287fdaaa3a8a31":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"92d91ea589f14058a7d175fe977876ea":{"model_module":"@jupyter-widgets/controls","model_name":"HBoxModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_b854ae46b5be40b8be5aac55e3a40696","IPY_MODEL_c3f58dca9ded419ba41792acfe752bd9","IPY_MODEL_65b8e4406aea49eeab53acef3162b69e"],"layout":"IPY_MODEL_dd8ae15b375f457e8899f201d2ae0a91"}},"b854ae46b5be40b8be5aac55e3a40696":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_0dd7f718f7dc43d6ad2c5af3dabd22de","placeholder":"​","style":"IPY_MODEL_0b89a881d9e4418f90e39b7e7981ca6b","value":"Generating train examples...:  99%"}},"c3f58dca9ded419ba41792acfe752bd9":{"model_module":"@jupyter-widgets/controls","model_name":"FloatProgressModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"","description":"","description_tooltip":null,"layout":"IPY_MODEL_e10a58bde7334ebb8d8a53656b1560e4","max":23262,"min":0,"orientation":"horizontal","style":"IPY_MODEL_18a923631f3f40d0bb9e617ef3431e8b","value":23262}},"65b8e4406aea49eeab53acef3162b69e":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_86f97c78d43d474b8dcb6e79ff28cdfc","placeholder":"​","style":"IPY_MODEL_2705710827ad47bfa1a2c70e7a9db436","value":" 23090/23262 [01:39&lt;00:01, 167.42 examples/s]"}},"dd8ae15b375f457e8899f201d2ae0a91":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":"hidden","width":null}},"0dd7f718f7dc43d6ad2c5af3dabd22de":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"0b89a881d9e4418f90e39b7e7981ca6b":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"e10a58bde7334ebb8d8a53656b1560e4":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"18a923631f3f40d0bb9e617ef3431e8b":{"model_module":"@jupyter-widgets/controls","model_name":"ProgressStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"86f97c78d43d474b8dcb6e79ff28cdfc":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"2705710827ad47bfa1a2c70e7a9db436":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"52da5ecad50f4b158f20df440b24493a":{"model_module":"@jupyter-widgets/controls","model_name":"HBoxModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_e97a9c13c28a48b2a58295ad3e987f95","IPY_MODEL_59c2e39212e141a28dc9e556c80c1319","IPY_MODEL_40e808f8c2e44b738a8d9756f1ee385b"],"layout":"IPY_MODEL_e88c5a0ec02c4293bcdad683d153ec94"}},"e97a9c13c28a48b2a58295ad3e987f95":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_5d4fc5aadd614043a9e13dee04259dfe","placeholder":"​","style":"IPY_MODEL_ff026d0bf0964149830db39d00ad0a73","value":"Shuffling /root/tensorflow_datasets/cats_vs_dogs/4.0.1.incompleteWBYCT8/cats_vs_dogs-train.tfrecord*...:  98%"}},"59c2e39212e141a28dc9e556c80c1319":{"model_module":"@jupyter-widgets/controls","model_name":"FloatProgressModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"","description":"","description_tooltip":null,"layout":"IPY_MODEL_2aa6aa9402ac4b8984440e07a2ea7ad9","max":23262,"min":0,"orientation":"horizontal","style":"IPY_MODEL_55b6792ce4704130a1d3a720882039f7","value":23262}},"40e808f8c2e44b738a8d9756f1ee385b":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_cf5d297fc9104205b54ff2ebbc61cc21","placeholder":"​","style":"IPY_MODEL_e714e48048d344b0a2d99c844427f029","value":" 22774/23262 [00:06&lt;00:00, 4936.65 examples/s]"}},"e88c5a0ec02c4293bcdad683d153ec94":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":"hidden","width":null}},"5d4fc5aadd614043a9e13dee04259dfe":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"ff026d0bf0964149830db39d00ad0a73":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"2aa6aa9402ac4b8984440e07a2ea7ad9":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"55b6792ce4704130a1d3a720882039f7":{"model_module":"@jupyter-widgets/controls","model_name":"ProgressStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"cf5d297fc9104205b54ff2ebbc61cc21":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"e714e48048d344b0a2d99c844427f029":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}}}
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
